@@ -1,0 +1,753 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions &#8212; Financial Modeling and Analytics Using Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Financial Modeling and Analytics Using Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Financial Modeling and Analytics
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch0.html">
+   Chapter 0
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ch0/4_functions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch0/4_functions.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/ch0/4_functions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plan-ahead">
+   Plan Ahead
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#combine-multiple-functions-for-maximal-efficiency">
+   Combine Multiple Functions for Maximal Efficiency
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<p>Variables are one of the two fundamental components of any programming language.  Now that we know what variables are (they things that store data) and how to work with them, we can introduce the the other fundamental component of programming: functions.</p>
+<p>Functions give us the ability to write some code that we reference over and over again without having to retype things.  Ultimately, programming is about making your life easier!  We work hard (say, for one semester of our lives) learning how to give a computer instructions (using Python) and then, for the rest of our lives, everything else is easier and more convenient because we can instruct a computer to do lots of the heavy lifting for us.  <u>In financial terms, we spend a little time now for a bunch of time saved later, and thus the net present value of learning to program is positive.</u></p>
+<p>Functions have three parts:</p>
+<ol class="simple">
+<li><p>Function defintion (name the function and determine what <em>inputs</em> we need, if any)</p></li>
+<li><p>Operations (execute some code)</p></li>
+<li><p>Return statement (define what want we want to get back from the function)</p></li>
+</ol>
+<p>As an example, let’s compute the weighted average cost of capital, defined as</p>
+<div class="math notranslate nohighlight">
+\[
+r_{\text{WACC}} = \frac{E}{V}\times r_E + \frac{D}{V}\times r_D\times (1-\tau_C).
+\]</div>
+<p>That is, the weighted average cost of capital for a firm is the proportion of equity in the firm times the equity cost of capital plus the proportion of debt in the firm times the debt cost of capital.  We adjust the latter for the tax shield of debt using the corporate tax rate <span class="math notranslate nohighlight">\(\tau_C\)</span>.</p>
+<p><strong>Part 1: definition</strong></p>
+<p>A function defintion begins with the keyword <code class="docutils literal notranslate"><span class="pre">def</span></code> followed by the function name and then a colon.</p>
+<p>Functions can use information passed to it via input arguments (inputs are named in the parentheses, which appear before the colon).</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">wacc</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">rE</span><span class="p">,</span> <span class="n">rD</span><span class="p">,</span> <span class="n">tC</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Note that in this function definition, we expect <code class="docutils literal notranslate"><span class="pre">E</span></code> and <code class="docutils literal notranslate"><span class="pre">D</span></code> as inputs.  We do not require <code class="docutils literal notranslate"><span class="pre">V</span></code> to be an input to the function, since <code class="docutils literal notranslate"><span class="pre">V</span></code> is easily calculated as <code class="docutils literal notranslate"><span class="pre">V</span> <span class="pre">=</span> <span class="pre">E</span> <span class="pre">+</span> <span class="pre">D</span></code>.  This calculation is included in part 2.</p>
+<p><strong>Part 2: operations</strong></p>
+<p>Functions run the code written inside of the function (operations) when the function is <em>called</em>.  A function call occurs when a programmer ‘’uses’’ the function, and we’ll see an example of this shortly.</p>
+<p><u>NOTE</u>: indentation keeps track of whether code is ‘’inside’’ a function</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">wacc</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">rE</span><span class="p">,</span> <span class="n">rD</span><span class="p">,</span> <span class="n">tC</span><span class="p">):</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">E</span> <span class="o">+</span> <span class="n">D</span>
+    <span class="n">cost_of_capital</span> <span class="o">=</span> <span class="n">E</span> <span class="o">/</span> <span class="n">V</span> <span class="o">*</span> <span class="n">rE</span> <span class="o">+</span> <span class="n">D</span> <span class="o">/</span> <span class="n">V</span> <span class="o">*</span> <span class="n">rD</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">tC</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Part 3: return value</strong></p>
+<p>Functions can be many, many lines of code.</p>
+<p>The last line, starting with the keyword <code class="docutils literal notranslate"><span class="pre">return</span></code> specifies what value comes back when you run the function.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">wacc</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">rE</span><span class="p">,</span> <span class="n">rD</span><span class="p">,</span> <span class="n">tC</span><span class="p">):</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">E</span> <span class="o">+</span> <span class="n">D</span>
+    <span class="n">cost_of_capital</span> <span class="o">=</span> <span class="n">E</span> <span class="o">/</span> <span class="n">V</span> <span class="o">*</span> <span class="n">rE</span> <span class="o">+</span> <span class="n">D</span> <span class="o">/</span> <span class="n">V</span> <span class="o">*</span> <span class="n">rD</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">tC</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cost_of_capital</span>
+</pre></div>
+</div>
+<p>When a function is created, Python becomes ‘’aware’’ of the function, but nothing else happens at that time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">wacc</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">rE</span><span class="p">,</span> <span class="n">rD</span><span class="p">,</span> <span class="n">tC</span><span class="p">):</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">E</span> <span class="o">+</span> <span class="n">D</span>
+    <span class="n">cost_of_capital</span> <span class="o">=</span> <span class="n">E</span> <span class="o">/</span> <span class="n">V</span> <span class="o">*</span> <span class="n">rE</span> <span class="o">+</span> <span class="n">D</span> <span class="o">/</span> <span class="n">V</span> <span class="o">*</span> <span class="n">rD</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">tC</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cost_of_capital</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For functions to be used, they need to be <em>called</em>.  For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wacc</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="o">.</span><span class="mi">08</span><span class="p">,</span><span class="o">.</span><span class="mi">04</span><span class="p">,</span><span class="o">.</span><span class="mi">35</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.06753846153846155
+</pre></div>
+</div>
+</div>
+</div>
+<p>tells Python to compute the weighted average cost of capital for a firm with an equity value of <span class="math notranslate nohighlight">\(100\)</span>, a debt value of <span class="math notranslate nohighlight">\(30\)</span>, an equity cost of capital of <span class="math notranslate nohighlight">\(8\%\)</span>, a debt cost of capital of <span class="math notranslate nohighlight">\(4\%\)</span>, and a tax rate of <span class="math notranslate nohighlight">\(35\%\)</span>.  The returned value of <code class="docutils literal notranslate"><span class="pre">0.0675</span></code> tells us that the firm’s WACC is <span class="math notranslate nohighlight">\(6.75\%\)</span>.</p>
+<p>In the above example, Python <em>assumes</em> the first number (<span class="math notranslate nohighlight">\(100\)</span>) should be given to the input variable <code class="docutils literal notranslate"><span class="pre">E</span></code>, it <em>assumes</em> that the second number (<span class="math notranslate nohighlight">\(30\)</span>) should be given to the input variable <code class="docutils literal notranslate"><span class="pre">D</span></code>, etc.  This is bad practice!  It’s much better to use the input variable names:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wacc</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">D</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">rE</span><span class="o">=.</span><span class="mi">08</span><span class="p">,</span><span class="n">rD</span><span class="o">=.</span><span class="mi">04</span><span class="p">,</span><span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.06753846153846155
+</pre></div>
+</div>
+</div>
+</div>
+<p>because then the ordering of how you enter the inputs doesn’t matter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wacc</span><span class="p">(</span><span class="n">rE</span><span class="o">=.</span><span class="mi">08</span><span class="p">,</span><span class="n">rD</span><span class="o">=.</span><span class="mi">04</span><span class="p">,</span><span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">,</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">D</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.06753846153846155
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is useful to keep in mind because, realistically, you won’t remember the default ordering of inputs (the order of input variables in the <code class="docutils literal notranslate"><span class="pre">def</span></code> line of the function definition).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">return</span></code> line is important because variables that live inside a function are stuck inside that function.</p>
+<p>E.g. the below will throw an error because <code class="docutils literal notranslate"><span class="pre">cost_of_capital</span></code> is only <em>accessible</em> inside the function <code class="docutils literal notranslate"><span class="pre">wacc</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cost_of_capital</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">967605</span><span class="n">eceae6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cost_of_capital</span>
+
+<span class="ne">NameError</span>: name &#39;cost_of_capital&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>In order to get the value <code class="docutils literal notranslate"><span class="pre">cost_of_capital</span></code> back from the function, we specify that this value should be <em>returned</em> from the function.  If desired, we can instruct the function to return multiple items to us.  For instance, the <code class="docutils literal notranslate"><span class="pre">wacc()</span></code> function defined above returns only the cost of capital.  If we want to return the total firm value, <code class="docutils literal notranslate"><span class="pre">V</span></code>, along with the cost of capital, we can easily modify the function to do so.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">more_wacc</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">rE</span><span class="p">,</span> <span class="n">rD</span><span class="p">,</span> <span class="n">tC</span><span class="p">):</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">E</span> <span class="o">+</span> <span class="n">D</span>
+    <span class="n">cost_of_capital</span> <span class="o">=</span> <span class="n">E</span> <span class="o">/</span> <span class="n">V</span> <span class="o">*</span> <span class="n">rE</span> <span class="o">+</span> <span class="n">D</span> <span class="o">/</span> <span class="n">V</span> <span class="o">*</span> <span class="n">rD</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">tC</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cost_of_capital</span><span class="p">,</span> <span class="n">V</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">more_wacc</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">D</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">rE</span><span class="o">=.</span><span class="mi">08</span><span class="p">,</span><span class="n">rD</span><span class="o">=.</span><span class="mi">04</span><span class="p">,</span><span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.06753846153846155, 130)
+</pre></div>
+</div>
+</div>
+</div>
+<p>By default, Python is printing out the returned item(s) from the function.  This happens because, if Python is not told to save the returned item(s) anywhere, Python simply prints it out.  We can instead save the returned item(s) to a variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_W</span> <span class="o">=</span> <span class="n">wacc</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">D</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">rE</span><span class="o">=.</span><span class="mi">08</span><span class="p">,</span><span class="n">rD</span><span class="o">=.</span><span class="mi">04</span><span class="p">,</span><span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This will preserve the returned item for later use.  For instance, suppose that we calculate the cost of capital and then estimate the present value of a series of three dividend payments (one today, one in a year from now, and one in two years from now).  For simplicity, let’s assume each divident payment is $5.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">+</span> <span class="mi">5</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r_W</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r_W</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14.071028677403966
+</pre></div>
+</div>
+</div>
+</div>
+<p>If multiple items are returned from a function and we save the returned items to a variable, that variable will be a list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">more_wacc</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">D</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">rE</span><span class="o">=.</span><span class="mi">08</span><span class="p">,</span><span class="n">rD</span><span class="o">=.</span><span class="mi">04</span><span class="p">,</span><span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.06753846153846155, 130)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.06753846153846155
+</pre></div>
+</div>
+</div>
+</div>
+<p><span style="color:red"><strong>Concept check</strong>:</span>  Use the <code class="docutils literal notranslate"><span class="pre">more_wacc()</span></code> function to calculate WACC under the following parameter values:</p>
+<ul class="simple">
+<li><p>E=200</p></li>
+<li><p>D=80</p></li>
+<li><p>rE=.09</p></li>
+<li><p>rD=0.8</p></li>
+<li><p>tC=.4</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># complete concept check here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="plan-ahead">
+<h2>Plan Ahead<a class="headerlink" href="#plan-ahead" title="Permalink to this headline">¶</a></h2>
+<p>Functions have the potential to create immense utility for the end user.  A very well constructed function can save you hours (if not days or weeks) of time down the road.  However, to be useful, the function needs to be planned carefully.  If the function is written well, then you can use it conveniently in the future without worrying about the details.  However, if the function is written poorly, it could end up creating a huge headache for you when you try to use it later.</p>
+<p>Keeping to the <code class="docutils literal notranslate"><span class="pre">wacc()</span></code> example, let’s consider some simple improvements to the function.</p>
+<p>Imagine that we plan to use this <code class="docutils literal notranslate"><span class="pre">wacc()</span></code> function to value companies, using data on companies that will be obtained in some other piece of code.  Thus, we collect all the requisite components to calculating a weighted average cost of capital, as well as information about the current free cash flow and an expected growth rate to the free cash flow.  For simplicity, assume that free cash flow growth and the risk free rate of capital are constant.  In this scenario, we can apply the Gordon growth formula to value the company.</p>
+<div class="math notranslate nohighlight">
+\[
+V = \frac{FCF}{r_{WACC}-g}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">wacc</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">D</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">rE</span><span class="o">=.</span><span class="mi">08</span><span class="p">,</span><span class="n">rD</span><span class="o">=.</span><span class="mi">04</span><span class="p">,</span><span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.01</span><span class="p">)</span> <span class="c1"># $2M in FCF, growing at 1%/year</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34.75935828877005
+</pre></div>
+</div>
+</div>
+</div>
+<p>A limitation of the <code class="docutils literal notranslate"><span class="pre">wacc()</span></code> function is that it assumes all inputs are sensible.  Suppose an innocent typo places a negative sign in front of the value for <code class="docutils literal notranslate"><span class="pre">rE</span></code>.  In this case, form value can end up a negative number!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">wacc</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">D</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">rE</span><span class="o">=-.</span><span class="mi">08</span><span class="p">,</span><span class="n">rD</span><span class="o">=.</span><span class="mi">04</span><span class="p">,</span><span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-30.516431924882625
+</pre></div>
+</div>
+</div>
+</div>
+<p>One can look at this and see that there is a problem; firm value cannot be negative.  A scarier example is one in which the accidental negative shows up in front of the value for <code class="docutils literal notranslate"><span class="pre">rD</span></code>.  This latter case is worse because it’s not as obvious that there is an issue (firm value is still calculated to be positive).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">wacc</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">D</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">rE</span><span class="o">=.</span><span class="mi">08</span><span class="p">,</span><span class="n">rD</span><span class="o">=-.</span><span class="mi">04</span><span class="p">,</span><span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43.91891891891892
+</pre></div>
+</div>
+</div>
+</div>
+<p>These sorts of small problems can create huge issues for you or your company.  In this working example, the typo over-values the firm by:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value_wrong</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">wacc</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">D</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">rE</span><span class="o">=.</span><span class="mi">08</span><span class="p">,</span><span class="n">rD</span><span class="o">=-.</span><span class="mi">04</span><span class="p">,</span><span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">value_right</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">wacc</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">D</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">rE</span><span class="o">=.</span><span class="mi">08</span><span class="p">,</span><span class="n">rD</span><span class="o">=.</span><span class="mi">04</span><span class="p">,</span><span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">value_wrong</span> <span class="o">/</span> <span class="n">value_right</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2635135135135136
+</pre></div>
+</div>
+</div>
+</div>
+<p>Therefore, when we write the <code class="docutils literal notranslate"><span class="pre">wacc()</span></code> function, we should take care to watch out for anticipable errors and deal with them.</p>
+<p>One option is to simply print out a warning message if the function detects something fishy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">better_wacc</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">rE</span><span class="p">,</span> <span class="n">rD</span><span class="p">,</span> <span class="n">tC</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">rE</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;rE is not positive&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">rD</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;rD is not positive&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">tC</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tC is not positive&#39;</span><span class="p">)</span>
+    
+    <span class="n">V</span> <span class="o">=</span> <span class="n">E</span> <span class="o">+</span> <span class="n">D</span>
+    <span class="n">cost_of_capital</span> <span class="o">=</span> <span class="n">E</span> <span class="o">/</span> <span class="n">V</span> <span class="o">*</span> <span class="n">rE</span> <span class="o">+</span> <span class="n">D</span> <span class="o">/</span> <span class="n">V</span> <span class="o">*</span> <span class="n">rD</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">tC</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cost_of_capital</span>
+
+<span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">better_wacc</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">D</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">rE</span><span class="o">=.</span><span class="mi">08</span><span class="p">,</span><span class="n">rD</span><span class="o">=-.</span><span class="mi">04</span><span class="p">,</span><span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning! rD is not positive
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43.91891891891892
+</pre></div>
+</div>
+</div>
+</div>
+<p>This at least generates a warning message, but warnings can only go so far.  There is a very real possibility that someone using this function may not notice the warning message and consequently carry on with their analysis despite having an erroneously calculated firm value.</p>
+<p>If you are certain something is absolutely not an acceptable input, stop it!  Do not let the function continue operating on bad data.  The way to do this is with an <strong>Exception</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">better_wacc</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">rE</span><span class="p">,</span> <span class="n">rD</span><span class="p">,</span> <span class="n">tC</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">rE</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;rE is not positive&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">rD</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;rD is not positive&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">tC</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;tC is not positive&#39;</span><span class="p">)</span>
+    
+    <span class="n">V</span> <span class="o">=</span> <span class="n">E</span> <span class="o">+</span> <span class="n">D</span>
+    <span class="n">cost_of_capital</span> <span class="o">=</span> <span class="n">E</span> <span class="o">/</span> <span class="n">V</span> <span class="o">*</span> <span class="n">rE</span> <span class="o">+</span> <span class="n">D</span> <span class="o">/</span> <span class="n">V</span> <span class="o">*</span> <span class="n">rD</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">tC</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cost_of_capital</span>
+
+<span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">better_wacc</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">D</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">rE</span><span class="o">=.</span><span class="mi">08</span><span class="p">,</span><span class="n">rD</span><span class="o">=-.</span><span class="mi">04</span><span class="p">,</span><span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">27</span><span class="o">-</span><span class="mi">256</span><span class="n">c67bfb8c0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="k">return</span> <span class="n">cost_of_capital</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> 
+<span class="ne">---&gt; </span><span class="mi">14</span> <span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">better_wacc</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">D</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">rE</span><span class="o">=.</span><span class="mi">08</span><span class="p">,</span><span class="n">rD</span><span class="o">=-.</span><span class="mi">04</span><span class="p">,</span><span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.01</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-27-256c67bfb8c0&gt;</span> in <span class="ni">better_wacc</span><span class="nt">(E, D, rE, rD, tC)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Warning! rE is not positive&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">if</span> <span class="n">rD</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Warning! rD is not positive&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">if</span> <span class="n">tC</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Warning! tC is not positive&#39;</span><span class="p">)</span>
+
+<span class="ne">Exception</span>: Warning! rD is not positive
+</pre></div>
+</div>
+</div>
+</div>
+<p>Exception messages spit out lots of text, so they can be somewhat intimidating to approach at first.  Python will print out a <em>traceback</em> of what code ran that ultimately resulted in an error.  The easiest way to get a quick picture of what happened is to follow the <code class="docutils literal notranslate"><span class="pre">---&gt;</span></code> symbols, reading from top to bottom.  The first such symbol indicates that line 14 was called.  The second such symbol tells us that line 6 was called.  The actual error message is the final line of the printout.  From this brief inspection, we can figure out what went wrong.  Notice that line 6 can only be called if line 5 is true.  Hence, the root of our problem is that line 5 is true, indicating that <code class="docutils literal notranslate"><span class="pre">rD</span></code> is entered as a negative number.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statements added to <code class="docutils literal notranslate"><span class="pre">better_wacc()</span></code> cause the funcion to “break” (raise an error message and stop the code from continuing) under certain scenarios.  To see that the code completely terminantes when an exception is raised, try the following.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">better_wacc</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">D</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">rE</span><span class="o">=.</span><span class="mi">08</span><span class="p">,</span><span class="n">rD</span><span class="o">=-.</span><span class="mi">04</span><span class="p">,</span><span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.01</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;firm value is now calculated&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="n">a502cbe6c27d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span> <span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">better_wacc</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">D</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">rE</span><span class="o">=.</span><span class="mi">08</span><span class="p">,</span><span class="n">rD</span><span class="o">=-.</span><span class="mi">04</span><span class="p">,</span><span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.01</span><span class="p">)</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;firm value is now calculated&#39;</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-27-256c67bfb8c0&gt;</span> in <span class="ni">better_wacc</span><span class="nt">(E, D, rE, rD, tC)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Warning! rE is not positive&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">if</span> <span class="n">rD</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Warning! rD is not positive&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">if</span> <span class="n">tC</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Warning! tC is not positive&#39;</span><span class="p">)</span>
+
+<span class="ne">Exception</span>: Warning! rD is not positive
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the second print statement is not executed.  Python halts all operations when an exception occurs.</p>
+<p>Do not insert exceptions to your functions unnecessarily.  Only rely on financial principles to make these judgements.  It is obvious, for example, that costs of capital should not be negative.  Moreover, the second Modigliani and Miller proposition tells us that <code class="docutils literal notranslate"><span class="pre">rE</span></code> should always be at least as high as <code class="docutils literal notranslate"><span class="pre">rD</span></code>, so we could raise an exception if <code class="docutils literal notranslate"><span class="pre">rE</span> <span class="pre">&lt;=</span> <span class="pre">rD</span></code>.  However, there is no strict rule, either by regulation or by principles of finance, that debt value cannot exceed equity value.  For some smaller firms, it may very well be that leverage exceeds 50%.  However, if you write the <code class="docutils literal notranslate"><span class="pre">better_wacc()</span></code> function and anticipate that it will only be used on large, S&amp;P 500 companies, it may make sense to check whether <code class="docutils literal notranslate"><span class="pre">E</span> <span class="pre">&gt;</span> <span class="pre">D</span></code>.  In this case, raising an exception would not be appropriate.  However, since we would generally expect that equity value should exceed debt value, it may make sense to print a warning message for the user.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">better_wacc</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">rE</span><span class="p">,</span> <span class="n">rD</span><span class="p">,</span> <span class="n">tC</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">rE</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;rE is not positive&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">rD</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;rD is not positive&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">tC</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;tC is negative&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">rE</span> <span class="o">&lt;=</span> <span class="n">rD</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;rE &lt;= rD, M&amp;M prop2 violated&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">D</span> <span class="o">&gt;</span> <span class="n">E</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning, debt value exceeds equity value.  Did you accidentally flip these values?&#39;</span><span class="p">)</span>
+    
+    <span class="n">V</span> <span class="o">=</span> <span class="n">E</span> <span class="o">+</span> <span class="n">D</span>
+    <span class="n">cost_of_capital</span> <span class="o">=</span> <span class="n">E</span> <span class="o">/</span> <span class="n">V</span> <span class="o">*</span> <span class="n">rE</span> <span class="o">+</span> <span class="n">D</span> <span class="o">/</span> <span class="n">V</span> <span class="o">*</span> <span class="n">rD</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">tC</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cost_of_capital</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><span style="color:red"><strong>Concept check</strong>:</span>  Use the <code class="docutils literal notranslate"><span class="pre">better_wacc()</span></code> function to estimate WACC given the following parameter values.</p>
+<ul class="simple">
+<li><p>E = 10</p></li>
+<li><p>D = 100</p></li>
+<li><p>rE = .15</p></li>
+<li><p>rD = .05</p></li>
+<li><p>tC = .35</p></li>
+</ul>
+<p>By the way, does the gap between <code class="docutils literal notranslate"><span class="pre">rE</span></code> and <code class="docutils literal notranslate"><span class="pre">rD</span></code> make senese to you?  Hint: think about the levels of <code class="docutils literal notranslate"><span class="pre">E</span></code> and <code class="docutils literal notranslate"><span class="pre">D</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># complete concept check here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="combine-multiple-functions-for-maximal-efficiency">
+<h2>Combine Multiple Functions for Maximal Efficiency<a class="headerlink" href="#combine-multiple-functions-for-maximal-efficiency" title="Permalink to this headline">¶</a></h2>
+<p>Functions should handle small, specific tasks.  Do not write one large function that does an entirely specialized task that you will rarely need to perform.  Remember, the goal of functions is to create shortcuts for us to instruct Python to perform a repetitive task, rather than re-writing those instructions each time we need a task to be performed.</p>
+<p>You will find that one convenient use of functions is to combine them in a manner like what is shown below.  We already have the <code class="docutils literal notranslate"><span class="pre">better_wacc()</span></code> function defined, which calculates a firm’s weighted average cost of capital.  As alluded to above, a firm’s cost of equity is a function of its leverage ratio.  So let’s create a function called <code class="docutils literal notranslate"><span class="pre">cost_of_equity()</span></code> that will determine a firm’s cost of equity capital.  Recall that Modigliani and Miller proposition 2 states:
+$<span class="math notranslate nohighlight">\(
+r_E = r_A + (r_A-r_D)*(1-t_C)*(D/E)
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>r_A$ is the <em>unlevered</em> cost of capital (equal to the cost of equity capital for a firm with no leverage).</p>
+<p>Let us then define another function, <code class="docutils literal notranslate"><span class="pre">firm_value()</span></code> that calculates the value of a firm.  Inside the <code class="docutils literal notranslate"><span class="pre">firm_value()</span></code> function, we will call both the <code class="docutils literal notranslate"><span class="pre">better_wacc()</span></code> function and the <code class="docutils literal notranslate"><span class="pre">cost_of_equity()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cost_of_equity</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">rA</span><span class="p">,</span> <span class="n">rD</span><span class="p">,</span> <span class="n">tC</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">rA</span> <span class="o">+</span> <span class="p">(</span><span class="n">rA</span><span class="o">-</span><span class="n">rD</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">tC</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">D</span><span class="o">/</span><span class="n">E</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">firm_value</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">rA</span><span class="p">,</span> <span class="n">rD</span><span class="p">,</span> <span class="n">tC</span><span class="p">,</span> <span class="n">FCF</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+    
+    <span class="n">rE</span> <span class="o">=</span> <span class="n">cost_of_equity</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="o">=</span><span class="n">D</span><span class="p">,</span> <span class="n">rA</span><span class="o">=</span><span class="n">rA</span><span class="p">,</span> <span class="n">rD</span><span class="o">=</span><span class="n">rD</span><span class="p">,</span> <span class="n">tC</span><span class="o">=</span><span class="n">tC</span><span class="p">)</span>
+    <span class="n">rW</span> <span class="o">=</span> <span class="n">better_wacc</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">rE</span><span class="p">,</span> <span class="n">rD</span><span class="p">,</span> <span class="n">tC</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">rW</span> <span class="o">&lt;</span> <span class="n">g</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;rW must be greater than g, but g=&#39;</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="s1">&#39;and rW=&#39;</span><span class="p">,</span> <span class="n">rW</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">FCF</span> <span class="o">/</span> <span class="p">(</span><span class="n">rW</span> <span class="o">-</span> <span class="n">g</span><span class="p">)</span>
+
+<span class="n">firm_value</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">D</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">rA</span><span class="o">=.</span><span class="mi">05</span><span class="p">,</span> <span class="n">rD</span><span class="o">=.</span><span class="mi">04</span><span class="p">,</span> <span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">,</span> <span class="n">FCF</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">g</span><span class="o">=.</span><span class="mi">01</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>55.61497326203209
+</pre></div>
+</div>
+</div>
+</div>
+<p>What happens if the firm had a different debt level?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">firm_value</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">D</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">rA</span><span class="o">=.</span><span class="mi">05</span><span class="p">,</span> <span class="n">rD</span><span class="o">=.</span><span class="mi">04</span><span class="p">,</span> <span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">,</span> <span class="n">FCF</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">g</span><span class="o">=.</span><span class="mi">01</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>57.77777777777777
+</pre></div>
+</div>
+</div>
+</div>
+<p>Debt is valuable because of the tax shield.  You can see that this is the cause for the change in firm value by setting <code class="docutils literal notranslate"><span class="pre">tC</span></code> to zero and re-computing both values above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">firm_value</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">D</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">rA</span><span class="o">=.</span><span class="mi">05</span><span class="p">,</span> <span class="n">rD</span><span class="o">=.</span><span class="mi">04</span><span class="p">,</span> <span class="n">tC</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">FCF</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">g</span><span class="o">=.</span><span class="mi">01</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">firm_value</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">D</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">rA</span><span class="o">=.</span><span class="mi">05</span><span class="p">,</span> <span class="n">rD</span><span class="o">=.</span><span class="mi">04</span><span class="p">,</span> <span class="n">tC</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">FCF</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">g</span><span class="o">=.</span><span class="mi">01</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.0
+50.0
+</pre></div>
+</div>
+</div>
+</div>
+<p><span style="color:red"><strong>Concept check</strong>:</span>  Estimate the cost of equity for a firm under two different scenarios.</p>
+<ol class="simple">
+<li><p>E=90, D=10, rA=.05, rD=.04, tC=.2</p></li>
+<li><p>E=10, D=90, rA=.05, rD=.04, tC=.2</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># complete concept check here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ch0"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By James Nordlund, Ph.D.<br/>
+        
+          <div class="extra_footer">
+            <p>
+  Copyright 2021.  License: CC BY-NC-ND 4.0
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

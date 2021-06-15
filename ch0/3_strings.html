@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strings &#8212; Financial Modeling and Analytics Using Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Financial Modeling and Analytics Using Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Financial Modeling and Analytics
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch0.html">
+   Chapter 0
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ch0/3_strings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch0/3_strings.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/ch0/3_strings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#escape-characters">
+   Escape Characters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#characters">
+   Characters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#searching-strings">
+   Searching Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string-concatenation">
+   String Concatenation
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="strings">
+<h1>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h1>
+<p>Strings are a simple but powerful tool for storing non-numerical information.</p>
+<p>String variables store textual data.  To tell Python that we want to treat some text as a string, we use either single quotations <code class="docutils literal notranslate"><span class="pre">'</span></code> or double quotations <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>.  Either format is a valid approach.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span> <span class="o">=</span> <span class="s1">&#39;banana&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vegetable</span> <span class="o">=</span> <span class="s2">&quot;carrot&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use of single or double quotes can make nested quotations easier.  For instance, what if you want to use an apostrophe inside a string variable?  Consider the apostrophe in:</p>
+<blockquote>
+<div><p>This isn’t an interesting sentence.</p>
+</div></blockquote>
+<p>In that case, be sure to use double quotes to mark your string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sent</span> <span class="o">=</span> <span class="s2">&quot;This isn&#39;t an interesting sentence.&quot;</span> <span class="c1"># this code will work</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sent</span> <span class="o">=</span> <span class="s1">&#39;This isn&#39;</span><span class="n">t</span> <span class="n">an</span> <span class="n">interesting</span> <span class="n">sentence</span><span class="o">.</span> <span class="c1"># this has problems</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-4-fcbf08c4a876&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="n">sent</span> <span class="o">=</span> <span class="s1">&#39;This isn&#39;</span><span class="n">t</span> <span class="n">an</span> <span class="n">interesting</span> <span class="n">sentence</span><span class="o">.</span> <span class="c1"># this has problems</span>
+                     <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because Python won’t be able to differentiate between the <code class="docutils literal notranslate"><span class="pre">'</span></code> character being used as an apostrophe and the <code class="docutils literal notranslate"><span class="pre">'</span></code> character being used to signify a single quote, the easiest way to enter the above example into Python is to use double quotes for the string.</p>
+<p>Similarly, use single quotes to mark the string if you want to include double quotes inside the string.  Consider the example:</p>
+<blockquote>
+<div><p>Bob said, “Yes, that is a boring sentence.”</p>
+</div></blockquote>
+<p>In this case, the easiest way to do things is to enter this as a string in Python is to use single quotes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quote</span> <span class="o">=</span> <span class="s1">&#39;Bob said, &quot;Yes, that is a boring sentence.&quot;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="escape-characters">
+<h2>Escape Characters<a class="headerlink" href="#escape-characters" title="Permalink to this headline">¶</a></h2>
+<p>The trickiest problem with quotations is something like the following example:</p>
+<blockquote>
+<div><p>Bob said, “Yes, that’s a boring sentence.”</p>
+</div></blockquote>
+<p>Note that the textual data we want to include here has both double quotes and a single quote inside the data.  To enter this text into Python as a string variable, we need to use an <strong>escape character</strong>.</p>
+<p>Escape characters are special commands inside of a string variable that tell Python that the data is something special.  Without an escape character inside a string, Python interprets every character literally.  For instance, the literal interpretation of <code class="docutils literal notranslate"><span class="pre">n</span></code> is that it represents the letter “n”.  The literal interpretation of <code class="docutils literal notranslate"><span class="pre">'</span></code> is that it represents a single quote.  We can “escape” from this literal interpretation of a character by prefacing that character with <code class="docutils literal notranslate"><span class="pre">\</span></code>.  The <code class="docutils literal notranslate"><span class="pre">\</span></code> symbol tells Python to treat the information following the <code class="docutils literal notranslate"><span class="pre">\</span></code> specially.  In the example here, <code class="docutils literal notranslate"><span class="pre">\'</span></code> will tell Python that the <code class="docutils literal notranslate"><span class="pre">'</span></code> character is to be treated as part of the data, rather than a potential end for a single quoted string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quote</span> <span class="o">=</span> <span class="s1">&#39;Bob said, &quot;Yes, that</span><span class="se">\&#39;</span><span class="s1">s a boring sentence.&quot;&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">quote</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bob said, &quot;Yes, that&#39;s a boring sentence.&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are only a handful of escape characters to remember.  The rest can be Googled if you need them.  The escape characters worth remembering are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">\'</span></code>: tells Python to treat <code class="docutils literal notranslate"><span class="pre">'</span></code> as a single quote (apostrophe) inside the string data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\&quot;</span></code>: tells Python to treat <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> as a double quote inside the string data</p></li>
+<li><p>‘\n’ : tells Python to enter a line break.</p></li>
+<li><p>‘\t’ : tells Python to enter a tab.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Line one of text.</span><span class="se">\n</span><span class="s1">Line two of text&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Line one of text.
+Line two of text
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">This is an indented sentenece.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	This is an indented sentenece.
+</pre></div>
+</div>
+</div>
+</div>
+<p><span style="color:red"><strong>Concept check</strong>:</span>  Set the variable, <code class="docutils literal notranslate"><span class="pre">v</span></code>, below equal to a string such that the second line evaluates to (aka prints out) the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">That</span> <span class="n">isn</span><span class="s1">&#39;t a smart investment.</span>
+<span class="n">You</span> <span class="n">should</span> <span class="n">but</span> <span class="n">Dogecoin</span> <span class="n">instead</span><span class="o">.</span>
+    <span class="p">(</span><span class="n">just</span> <span class="n">kidding</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># complete concept check here</span>
+<span class="n">v</span> <span class="o">=</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="characters">
+<h2>Characters<a class="headerlink" href="#characters" title="Permalink to this headline">¶</a></h2>
+<p>A string is a collection of characters.  The string <code class="docutils literal notranslate"><span class="pre">'cat'</span></code> is comprised of the individual characters <code class="docutils literal notranslate"><span class="pre">'c'</span></code>, <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, and <code class="docutils literal notranslate"><span class="pre">'t'</span></code>.  The string <code class="docutils literal notranslate"><span class="pre">'my\ncat'</span></code> is made up of the characters <code class="docutils literal notranslate"><span class="pre">'m'</span></code>, <code class="docutils literal notranslate"><span class="pre">'y'</span></code>, <code class="docutils literal notranslate"><span class="pre">'\n'</span></code>, <code class="docutils literal notranslate"><span class="pre">'c'</span></code>, <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, <code class="docutils literal notranslate"><span class="pre">'t'</span></code>.  Note that the third character in this latter example is an escape character <code class="docutils literal notranslate"><span class="pre">'\n</span></code>’ rather than an alphanumeric character (the letters <code class="docutils literal notranslate"><span class="pre">'a'</span></code>-<code class="docutils literal notranslate"><span class="pre">'z'</span></code> or numbers <code class="docutils literal notranslate"><span class="pre">'0'</span></code>-<code class="docutils literal notranslate"><span class="pre">'9'</span></code>) or a symbol (e.g. <code class="docutils literal notranslate"><span class="pre">'!'</span></code>, <code class="docutils literal notranslate"><span class="pre">'&#64;'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'#'</span></code>).</p>
+<p>Becuase strings are comprised of characters, it is helpful to know how to access individual characters of those strings.  We will work with the examples <code class="docutils literal notranslate"><span class="pre">'AAPL</span> <span class="pre">Stock'</span></code> and <code class="docutils literal notranslate"><span class="pre">'F</span> <span class="pre">Stock'</span></code> for a moment.  These two strings are items that we may come accross in a written document.  Suppose that we need to extract the ticker names from these strings.  For instance, if these strings are items that we’ve extracted from a news article or a tweet, then finding the ticker names helps us determine what the subject of the article/tweet is.</p>
+<p>The first character of a string is the <span class="math notranslate nohighlight">\(0^{th}\)</span> character in the string.  This is a quirk of Python, along with a number of many other programming languages.  Python begins counting at zero, rather than at one.  Hence, the first character is character <span class="math notranslate nohighlight">\(0\)</span>, the second character is character number <span class="math notranslate nohighlight">\(1\)</span>, etc.  We can select character number <span class="math notranslate nohighlight">\(n\)</span> with square brackets that follow immediately after the string name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;cat&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a
+</pre></div>
+</div>
+</div>
+</div>
+<p>Along with selecting a single character with its position in the string, we can choose a subset of characters with a set of sequential numbers.  Such numbers are listed with a starting point and ending point.  For instance, if we want the numbers <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(3\)</span>, then we would indicate the starting point of <span class="math notranslate nohighlight">\(1\)</span> and the ending point of <span class="math notranslate nohighlight">\(4\)</span>.  Yes, <span class="math notranslate nohighlight">\(4\)</span>, <em>not</em> <span class="math notranslate nohighlight">\(3\)</span>.  The ending point is the number <em>after</em> the last number to be included.</p>
+<p>Consequently, <code class="docutils literal notranslate"><span class="pre">0:2</span></code> would select characters number <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(1\)</span> because the starting point is <span class="math notranslate nohighlight">\(0\)</span> and the ending point is <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ca
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similarly, <code class="docutils literal notranslate"><span class="pre">1:3</span></code> selects characters number <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span> because the starting point is <span class="math notranslate nohighlight">\(1\)</span> and the ending point is <span class="math notranslate nohighlight">\(3\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>at
+</pre></div>
+</div>
+</div>
+</div>
+<p>The ability to select a substring from a string is powerful, as we will see when applied to our example strings <code class="docutils literal notranslate"><span class="pre">'AAPL</span> <span class="pre">Stock'</span></code> and <code class="docutils literal notranslate"><span class="pre">'F</span> <span class="pre">Stock'</span></code>.</p>
+</div>
+<div class="section" id="searching-strings">
+<h2>Searching Strings<a class="headerlink" href="#searching-strings" title="Permalink to this headline">¶</a></h2>
+<p>To find a particular character in a string, we can use the <code class="docutils literal notranslate"><span class="pre">.find()</span></code> function.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">'cat'.find('a')</span></code> takes the string <code class="docutils literal notranslate"><span class="pre">'cat'</span></code> and applies the function <code class="docutils literal notranslate"><span class="pre">.find()</span></code> to it.  We specify the character <code class="docutils literal notranslate"><span class="pre">'a'</span></code> inside the function (inside the parentheses) to indicate that we are searching for the character <code class="docutils literal notranslate"><span class="pre">'a'</span></code>.  This command in Python will return the number <span class="math notranslate nohighlight">\(1\)</span> because the character <code class="docutils literal notranslate"><span class="pre">'a'</span></code> first appears in the string <code class="docutils literal notranslate"><span class="pre">'cat'</span></code> at position <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;cat&#39;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">.find()</span></code> will give us only the position of the first instance of a desired character.  Suppose that we want to find the position of the character <code class="docutils literal notranslate"><span class="pre">'o'</span></code> in the string <code class="docutils literal notranslate"><span class="pre">'google'</span></code>.  The command <code class="docutils literal notranslate"><span class="pre">'google.find('o')</span></code> will return the number <span class="math notranslate nohighlight">\(1\)</span>.  It will never give us back the number <span class="math notranslate nohighlight">\(2\)</span>, even though the character <code class="docutils literal notranslate"><span class="pre">'o'</span></code> also appears in that position in the string <code class="docutils literal notranslate"><span class="pre">'google'</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;google&#39;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;This is a sentence&#39;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;is&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>If a given character is <em>not</em> found in a string, the <code class="docutils literal notranslate"><span class="pre">.find()</span></code> function will return <code class="docutils literal notranslate"><span class="pre">-1</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;google&#39;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+</pre></div>
+</div>
+</div>
+</div>
+<p><span style="color:red"><strong>Concept check</strong>:</span>  Find the position of the ticker <code class="docutils literal notranslate"><span class="pre">NVDA</span></code> in the following string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># complete concept check here</span>
+<span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;Analysts expect earnings for NVDA to rise over the next four quarters.&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="string-concatenation">
+<h2>String Concatenation<a class="headerlink" href="#string-concatenation" title="Permalink to this headline">¶</a></h2>
+<p>The way to combine (also known as <em>concatenating</em>) two or more strings is to use the <code class="docutils literal notranslate"><span class="pre">+</span></code> character.  Just like <code class="docutils literal notranslate"><span class="pre">+</span></code> combines integers and/or floating point numbers, <code class="docutils literal notranslate"><span class="pre">+</span></code> combines strings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word1</span> <span class="o">=</span> <span class="s1">&#39;Apple&#39;</span>
+<span class="n">word2</span> <span class="o">=</span> <span class="s1">&#39;Inc.&#39;</span>
+<span class="n">word1</span> <span class="o">+</span> <span class="n">word2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;AppleInc.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">+</span></code> does not join together strings with spaces between them.  There are very reasonable applications in which no spacing should occur between strings, and so Python will not assume that you’d like to have spaces between strings.</p>
+<p>In the above example, we can safely say that the combined string would look more reasonable with a space between the two words.  To achive this, simply include a <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> string as a middle string in what becomes a concatenation of three strings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word1</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">word2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Apple Inc.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that tricky issues arrive if we use <code class="docutils literal notranslate"><span class="pre">+</span></code> in circumstances that include both strings and numbers.  Obviously, one can’t add strings and numbers together in any sort of algebraic interpretation of the word “add”.  Importantly, however, is that Python won’t assume that, in the presence of both strings and numbers, a <code class="docutils literal notranslate"><span class="pre">+</span></code> character should be interpreted as concatenation.  To clarify these last two sentences, let’s attempt two different lines of code.</p>
+<p>First, enter a number plus a string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span> <span class="o">+</span> <span class="s1">&#39;1&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="mi">5043558</span><span class="n">bd679</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">8</span> <span class="o">+</span> <span class="s1">&#39;1&#39;</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python prints out an error.  The message, in a nutshell, informs us that we can’t use <code class="docutils literal notranslate"><span class="pre">+</span></code> in the presence of an <code class="docutils literal notranslate"><span class="pre">int</span></code> and a <code class="docutils literal notranslate"><span class="pre">str</span></code> variable type.</p>
+<p>Second, try things the other way around.  Enter a string plus a number.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="mi">8</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">25</span><span class="o">-</span><span class="mi">73173934</span><span class="n">f639</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="mi">8</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, Python prints out an error.  This time the message is different.  It warns us that Python can only concatenate <code class="docutils literal notranslate"><span class="pre">str</span></code> variables with other <code class="docutils literal notranslate"><span class="pre">str</span></code> variables (and not <code class="docutils literal notranslate"><span class="pre">int</span></code> variables.</p>
+<p>Why do the messages differ?  In the first case, Python sees a number (integer) first.  It then assumes that the <code class="docutils literal notranslate"><span class="pre">+</span></code> character must be addition, and gets confused and raises an error when, after the <code class="docutils literal notranslate"><span class="pre">+</span></code> character, it encounters a string.  In the second case, Python sees a string first.  It then assumes that the <code class="docutils literal notranslate"><span class="pre">+</span></code> character is meant to signify concatenation, and thus becomes confused and raises and error when it sees an integer.</p>
+<p>The solution to the problem of combining strings and numbers together is called <em>type conversion</em>, and it will be discussed later in this chapter.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ch0"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By James Nordlund, Ph.D.<br/>
+        
+          <div class="extra_footer">
+            <p>
+  Copyright 2021.  License: CC BY-NC-ND 4.0
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
