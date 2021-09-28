@@ -21,10 +21,10 @@ define c equal a plus b
 c = a + b
 ------------------
 
-[0;36m  File [0;32m"<ipython-input-11-a8368e710330>"[0;36m, line [0;32m1[0m
+[0;36m  File [0;32m"<ipython-input-10-a8368e710330>"[0;36m, line [0;32m1[0m
 [0;31m    define c equal a plus b[0m
 [0m           ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-SyntaxError: invalid syntax (<ipython-input-11-a8368e710330>, line 1)
+SyntaxError: invalid syntax (<ipython-input-10-a8368e710330>, line 1)
 

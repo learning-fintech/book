@@ -1,0 +1,1009 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regression Details &#8212; Financial Modeling and Analytics Using Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Regression" href="3_regression.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Financial Modeling and Analytics Using Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Financial Modeling and Analytics
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python Preliminaries - Principles and Preferred Practices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/1_variablesAndData.html">
+   Variables and Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/2_math.html">
+   Math with Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/3_strings.html">
+   Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/3b_strings.html">
+   More Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4_functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4b_functions.html">
+   More Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4c_functions.html">
+   Combine Multiple Functions for Maximal Efficiency
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Learning to Love the Logic of Loops and Lists
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/1_loops.html">
+   Loops and Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/2_lists.html">
+   Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/3_list_comprehension.html">
+   List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/4_lifetime_savings.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   Loops and Delayed Savings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/5_robo_advising.html">
+   Robo-Advising
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Dictionaries, DataFrames, Descriptives, and Diagnostics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/1_dictionaries.html">
+   Dictionaries and DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/2_robo_dictionary.html">
+   Dictionaries and the Robo-Advisor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/3_dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/4_slicing_dataframes.html">
+   Selecting Pieces of DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/5_dates_and_dataframes.html">
+   Dates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/6_descriptives.html">
+   Descriptive Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/7_simulation.html">
+   Simulating Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/8_robo_sim.html">
+   Simulating Returns for the Robo-Advisor
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Can We Craft Causal Conclusions?
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_regression_data.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_causal_diagrams.html">
+   Causal Graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Regression Details
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ch4/4_regression_details.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/learning-fintech/book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/learning-fintech/book/issues/new?title=Issue%20on%20page%20%2Fch4/4_regression_details.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/learning-fintech/book/master?urlpath=tree/ch4/4_regression_details.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="regression-details">
+<h1>Regression Details<a class="headerlink" href="#regression-details" title="Permalink to this headline">¶</a></h1>
+<p>This notebook will explore a few additional facets of linear regression with a single variable.  Begin by loading the CEOs data from the <code class="docutils literal notranslate"><span class="pre">wooldridge</span></code> model.  We’ll print out a head of the DataFrame to see a snapshot of what the data looks like.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wooldridge</span> <span class="k">as</span> <span class="nn">woo</span>
+<span class="n">ceos</span> <span class="o">=</span> <span class="n">woo</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;ceosal1&#39;</span><span class="p">)</span>
+<span class="n">ceos</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>salary</th>
+      <th>pcsalary</th>
+      <th>sales</th>
+      <th>roe</th>
+      <th>pcroe</th>
+      <th>ros</th>
+      <th>indus</th>
+      <th>finance</th>
+      <th>consprod</th>
+      <th>utility</th>
+      <th>lsalary</th>
+      <th>lsales</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>209.000000</td>
+      <td>209.000000</td>
+      <td>209.000000</td>
+      <td>209.000000</td>
+      <td>209.000000</td>
+      <td>209.000000</td>
+      <td>209.000000</td>
+      <td>209.000000</td>
+      <td>209.000000</td>
+      <td>209.000000</td>
+      <td>209.000000</td>
+      <td>209.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1281.119617</td>
+      <td>13.282297</td>
+      <td>6923.793282</td>
+      <td>17.184211</td>
+      <td>10.800478</td>
+      <td>61.803828</td>
+      <td>0.320574</td>
+      <td>0.220096</td>
+      <td>0.287081</td>
+      <td>0.172249</td>
+      <td>6.950386</td>
+      <td>8.292265</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1372.345308</td>
+      <td>32.633921</td>
+      <td>10633.271088</td>
+      <td>8.518509</td>
+      <td>97.219399</td>
+      <td>68.177052</td>
+      <td>0.467818</td>
+      <td>0.415306</td>
+      <td>0.453486</td>
+      <td>0.378503</td>
+      <td>0.566374</td>
+      <td>1.013161</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>223.000000</td>
+      <td>-61.000000</td>
+      <td>175.199997</td>
+      <td>0.500000</td>
+      <td>-98.900002</td>
+      <td>-58.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>5.407172</td>
+      <td>5.165928</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>736.000000</td>
+      <td>-1.000000</td>
+      <td>2210.300049</td>
+      <td>12.400000</td>
+      <td>-21.200001</td>
+      <td>21.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>6.601230</td>
+      <td>7.700883</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1039.000000</td>
+      <td>9.000000</td>
+      <td>3705.199951</td>
+      <td>15.500000</td>
+      <td>-3.000000</td>
+      <td>52.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>6.946014</td>
+      <td>8.217492</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1407.000000</td>
+      <td>20.000000</td>
+      <td>7177.000000</td>
+      <td>20.000000</td>
+      <td>19.500000</td>
+      <td>81.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>7.249215</td>
+      <td>8.878636</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>14822.000000</td>
+      <td>212.000000</td>
+      <td>97649.898438</td>
+      <td>56.299999</td>
+      <td>977.000000</td>
+      <td>418.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>9.603868</td>
+      <td>11.489144</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We’ve already computed ordinary least squares regression coefficients “by hand” once, which is a rite of passage that will surely stay with you for the rest of your life.  But now that we’ve seen how it’s done, it’s time to speed things up by asking Python to do the regression for us.</p>
+<p>The module we’ll use for this is <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>.  Within <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>, the <code class="docutils literal notranslate"><span class="pre">forumla.api</span></code> suite of tools will allow us to perform linear regression with ease.  The canonical import for <code class="docutils literal notranslate"><span class="pre">statsmodels.formula.api</span></code> is <code class="docutils literal notranslate"><span class="pre">smf</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Regression in <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> happens in two steps.  In the first step, we tell Python about a regression formula that we want to use.  The linear equation</p>
+<div class="math notranslate nohighlight">
+\[
+y = \beta_0 + \beta_1 x + u
+\]</div>
+<p>is described as <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">~</span> <span class="pre">x</span></code> in <code class="docutils literal notranslate"><span class="pre">smf</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">&#39;salary ~ roe&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">ceos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that we do not need to specify an intercept term.  The <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> module will add one in by default.  The reason why will be considered later.</p>
+<p>After creating a variable that holds the regression information, we must then instruct <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> to actually perform the regression.  The reason for why this task is split into two steps will be shown later when we address heteroskedasticity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output from a <code class="docutils literal notranslate"><span class="pre">.fit()</span></code> call will be a variable that stores all kinds of useful information.</p>
+<p>For an overview of the regression estimation, use the <code class="docutils literal notranslate"><span class="pre">.summary()</span></code> command on the output variable.  If you put the <code class="docutils literal notranslate"><span class="pre">.summary()</span></code> call inside of a <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement then the output will be displayed on your screen a bit better.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 salary   R-squared:                       0.013
+Model:                            OLS   Adj. R-squared:                  0.008
+Method:                 Least Squares   F-statistic:                     2.767
+Date:                Mon, 27 Sep 2021   Prob (F-statistic):             0.0978
+Time:                        19:27:25   Log-Likelihood:                -1804.5
+No. Observations:                 209   AIC:                             3613.
+Df Residuals:                     207   BIC:                             3620.
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept    963.1913    213.240      4.517      0.000     542.790    1383.592
+roe           18.5012     11.123      1.663      0.098      -3.428      40.431
+==============================================================================
+Omnibus:                      311.096   Durbin-Watson:                   2.105
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            31120.902
+Skew:                           6.915   Prob(JB):                         0.00
+Kurtosis:                      61.158   Cond. No.                         43.3
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre></div>
+</div>
+</div>
+</div>
+<p>There’s a lot of output here, some of it deals with topics covered while much of it deals with things we have not yet discussed.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Intercept</span></code> (<span class="math notranslate nohighlight">\(\beta_0\)</span>) is estimated to be <span class="math notranslate nohighlight">\(963.1913\)</span>.  The slope coefficient on <code class="docutils literal notranslate"><span class="pre">roe</span></code> (<span class="math notranslate nohighlight">\(\beta_1\)</span>) is estimated to be <span class="math notranslate nohighlight">\(18.5012\)</span>.</p>
+<p>Along with the ability to display summary output, the output variable also stores information about <span class="math notranslate nohighlight">\(\hat{y}\)</span> and <span class="math notranslate nohighlight">\(\hat{u}\)</span>.  The information on <span class="math notranslate nohighlight">\(\hat{y}\)</span> is in <code class="docutils literal notranslate"><span class="pre">.fittedvalues</span></code> while the information about <span class="math notranslate nohighlight">\(\hat{u}\)</span> is in <code class="docutils literal notranslate"><span class="pre">.resid</span></code>.  Of course, <span class="math notranslate nohighlight">\(\hat{u}\)</span> is merely <span class="math notranslate nohighlight">\(y - \hat{y}\)</span>, so once we have <code class="docutils literal notranslate"><span class="pre">.fittedvalues</span></code> we could easily calculate <span class="math notranslate nohighlight">\(\hat{u}\)</span> ourselves without getting the data from <code class="docutils literal notranslate"><span class="pre">.resid</span></code> (but <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> is just super generous).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;salary_hat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">fittedvalues</span> <span class="c1"># creates a column of y hat values for our DataFrame</span>
+<span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;u_hat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">resid</span> <span class="c1"># creates a column of u hat values for our DataFrame</span>
+<span class="n">ceos</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>salary</th>
+      <th>pcsalary</th>
+      <th>sales</th>
+      <th>roe</th>
+      <th>pcroe</th>
+      <th>ros</th>
+      <th>indus</th>
+      <th>finance</th>
+      <th>consprod</th>
+      <th>utility</th>
+      <th>lsalary</th>
+      <th>lsales</th>
+      <th>salary_hat</th>
+      <th>u_hat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1095</td>
+      <td>20</td>
+      <td>27595.000000</td>
+      <td>14.1</td>
+      <td>106.400002</td>
+      <td>191</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6.998509</td>
+      <td>10.225389</td>
+      <td>1224.058071</td>
+      <td>-129.058071</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1001</td>
+      <td>32</td>
+      <td>9958.000000</td>
+      <td>10.9</td>
+      <td>-30.600000</td>
+      <td>13</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6.908755</td>
+      <td>9.206132</td>
+      <td>1164.854261</td>
+      <td>-163.854261</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1122</td>
+      <td>9</td>
+      <td>6125.899902</td>
+      <td>23.5</td>
+      <td>-16.299999</td>
+      <td>14</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7.022868</td>
+      <td>8.720281</td>
+      <td>1397.969216</td>
+      <td>-275.969216</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>578</td>
+      <td>-9</td>
+      <td>16246.000000</td>
+      <td>5.9</td>
+      <td>-25.700001</td>
+      <td>-21</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6.359574</td>
+      <td>9.695602</td>
+      <td>1072.348338</td>
+      <td>-494.348338</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1368</td>
+      <td>7</td>
+      <td>21783.199219</td>
+      <td>13.8</td>
+      <td>-3.000000</td>
+      <td>56</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7.221105</td>
+      <td>9.988894</td>
+      <td>1218.507712</td>
+      <td>149.492288</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s turn our attention to <span class="math notranslate nohighlight">\(R^2\)</span>, a measure for the goodness of fit for a linear regression.  Define:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Sum of Squares, Total (SST)} = \sum_{i=1}^n (y_i - \bar{y})^2
+\]</div>
+<p>to be the total variation in the dependent variable.  Note that the <em>variance</em> of the dependent variable is SST divided by <span class="math notranslate nohighlight">\(n\)</span>.  Also define</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Sum of Squares, Explained (SSE)} = \sum_{i=1}^n (\hat{y}_i - \bar{y})^2
+\]</div>
+<p>to be the variation explained by the regression.  Finally, let</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Sum of Squares, Residual (SSR)} = \sum_{i=1}^n (y_i - \hat{y}_i)^2
+\]</div>
+<p>to be the variation in the dependent variable that is not explained by the regression.</p>
+<p>Then, the <span class="math notranslate nohighlight">\(R^2\)</span> of the regression model is</p>
+<div class="math notranslate nohighlight">
+\[
+R^2 = \frac{SSE}{SST} = 1 - \frac{SSR}{SST}.
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;ST&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;salary&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;salary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># calculate R-squared</span>
+<span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;SE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;salary_hat&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;salary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;SR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;u_hat&#39;</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">ceos</span><span class="p">[[</span><span class="s1">&#39;ST&#39;</span><span class="p">,</span><span class="s1">&#39;SE&#39;</span><span class="p">,</span><span class="s1">&#39;SR&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ST</th>
+      <th>SE</th>
+      <th>SR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>2.090000e+02</td>
+      <td>209.000000</td>
+      <td>2.090000e+02</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1.874320e+06</td>
+      <td>24719.708325</td>
+      <td>1.849601e+06</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.449754e+07</td>
+      <td>59047.801988</td>
+      <td>1.438029e+07</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>3.535839e+00</td>
+      <td>2.427324</td>
+      <td>3.847426e-01</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>4.457149e+04</td>
+      <td>1532.299834</td>
+      <td>4.076691e+04</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1.773417e+05</td>
+      <td>6882.895491</td>
+      <td>1.834925e+05</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>4.544373e+05</td>
+      <td>20740.935509</td>
+      <td>3.904399e+05</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1.833554e+08</td>
+      <td>523725.039775</td>
+      <td>1.822469e+08</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;SE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;ST&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;SR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;ST&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.013188624081034115
+0.01318862408103405
+</pre></div>
+</div>
+</div>
+</div>
+<p>This value for <span class="math notranslate nohighlight">\(R^2\)</span> matches the one shown in the <code class="docutils literal notranslate"><span class="pre">.summary()</span></code> output above.</p>
+<p>Likewise, if we assume that the variance of <span class="math notranslate nohighlight">\(u\)</span> is independent of <span class="math notranslate nohighlight">\(x\)</span> (meaning, in this instance, that the regression error has variance that does not depend on the level of <code class="docutils literal notranslate"><span class="pre">roe</span></code>), then the formula for <span class="math notranslate nohighlight">\(var(\hat{\beta}_1)\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
+var(\hat{\beta}_1) = \frac{var(u)}{\sum_{i=1}^n(x_i - \bar{x})^2}
+\]</div>
+<p>where we can estimate <span class="math notranslate nohighlight">\(var(u)\)</span> with</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{var}(u) = \frac{1}{n-2}\sum_{i=1}^n \hat{u}_i^2
+\]</div>
+<p>Often, we report the square root of <span class="math notranslate nohighlight">\(var(\hat{\beta}_1)\)</span>, which is referred to as the <em>standard error</em> of the regression model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">se_b1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="p">((</span><span class="n">res</span><span class="o">.</span><span class="n">resid</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;SR&#39;</span><span class="p">])</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="p">((</span><span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;roe&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;roe&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">se_b1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.123250903287637
+</pre></div>
+</div>
+</div>
+</div>
+<p>This output again matches the regression output from <code class="docutils literal notranslate"><span class="pre">.summary()</span></code> above.</p>
+<p>To see it a bit more slowly:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;SR&#39;</span><span class="p">])</span>
+<span class="n">varHat_u</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">resid</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">var_b1</span> <span class="o">=</span> <span class="n">varHat_u</span> <span class="o">/</span> <span class="p">((</span><span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;roe&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">ceos</span><span class="p">[</span><span class="s1">&#39;roe&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">se_b1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_b1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">se_b1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.123250903287637
+</pre></div>
+</div>
+</div>
+</div>
+<p>Knowledge of the standard error is important.</p>
+<p>The formulas shown above assume that the variance of <span class="math notranslate nohighlight">\(u\)</span> is independent of <span class="math notranslate nohighlight">\(x\)</span>.  We can allow for the two to be related with the <code class="docutils literal notranslate"><span class="pre">cov_type_'HC3'</span></code> option to <code class="docutils literal notranslate"><span class="pre">.fit()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res2</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">cov_type</span><span class="o">=</span><span class="s1">&#39;HC3&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res2</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 salary   R-squared:                       0.013
+Model:                            OLS   Adj. R-squared:                  0.008
+Method:                 Least Squares   F-statistic:                     7.191
+Date:                Mon, 27 Sep 2021   Prob (F-statistic):            0.00792
+Time:                        19:27:25   Log-Likelihood:                -1804.5
+No. Observations:                 209   AIC:                             3613.
+Df Residuals:                     207   BIC:                             3620.
+Df Model:                           1                                         
+Covariance Type:                  HC3                                         
+==============================================================================
+                 coef    std err          z      P&gt;|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept    963.1913    122.072      7.890      0.000     723.935    1202.448
+roe           18.5012      6.899      2.682      0.007       4.979      32.024
+==============================================================================
+Omnibus:                      311.096   Durbin-Watson:                   2.105
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            31120.902
+Skew:                           6.915   Prob(JB):                         0.00
+Kurtosis:                      61.158   Cond. No.                         43.3
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note here that, unlike before, the 95% confidence interval for <code class="docutils literal notranslate"><span class="pre">roe</span></code> excludes <span class="math notranslate nohighlight">\(0\)</span>.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ch4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="3_regression.html" title="previous page">Regression</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By James Nordlund, Ph.D.<br/>
+        
+          <div class="extra_footer">
+            <p>
+  Copyright 2021.  License: CC BY-NC-ND 4.0
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

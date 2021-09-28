@@ -1,0 +1,800 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dates &#8212; Financial Modeling and Analytics Using Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Descriptive Statistics" href="6_descriptives.html" />
+    <link rel="prev" title="Selecting Pieces of DataFrames" href="4_slicing_dataframes.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Financial Modeling and Analytics Using Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Financial Modeling and Analytics
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python Preliminaries - Principles and Preferred Practices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/1_variablesAndData.html">
+   Variables and Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/2_math.html">
+   Math with Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/3_strings.html">
+   Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/3b_strings.html">
+   More Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4_functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4b_functions.html">
+   More Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4c_functions.html">
+   Combine Multiple Functions for Maximal Efficiency
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Learning to Love the Logic of Loops and Lists
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/1_loops.html">
+   Loops and Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/2_lists.html">
+   Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/3_list_comprehension.html">
+   List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/4_lifetime_savings.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   Loops and Delayed Savings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/5_robo_advising.html">
+   Robo-Advising
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Dictionaries, DataFrames, Descriptives, and Diagnostics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_dictionaries.html">
+   Dictionaries and DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_robo_dictionary.html">
+   Dictionaries and the Robo-Advisor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4_slicing_dataframes.html">
+   Selecting Pieces of DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Dates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6_descriptives.html">
+   Descriptive Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7_simulation.html">
+   Simulating Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8_robo_sim.html">
+   Simulating Returns for the Robo-Advisor
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Can We Craft Causal Conclusions?
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/1_regression_data.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/2_causal_diagrams.html">
+   Causal Graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/3_regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/4_regression_details.html">
+   Regression Details
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ch3/5_dates_and_dataframes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/learning-fintech/book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/learning-fintech/book/issues/new?title=Issue%20on%20page%20%2Fch3/5_dates_and_dataframes.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/learning-fintech/book/master?urlpath=tree/ch3/5_dates_and_dataframes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="dates">
+<h1>Dates<a class="headerlink" href="#dates" title="Permalink to this headline">¶</a></h1>
+<p>If you see the string <code class="docutils literal notranslate"><span class="pre">'2013-02-14'</span></code>, your brain automatically reads this as “February 14, 2013”.  Python doesn’t have a brain.  If we want Python to translate a string that represents a date into something that it can recognize as a date, we need give it some specific instructions.</p>
+<p>What does it mean for a variable to be recognized as a date in Python?  Well, consider the date <code class="docutils literal notranslate"><span class="pre">'2013-01-31'</span></code>.  People with brains know that if we increment the date by one, the following date is <code class="docutils literal notranslate"><span class="pre">'2013-02-01'</span></code>.  Brainless Python doesn’t understand something like <code class="docutils literal notranslate"><span class="pre">'2013-01-31'+1</span></code>.</p>
+<p>Just like a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <em>DataFrame</em> special variable type is the most useful way to store data in Python, the best way to work with dates is using the <code class="docutils literal notranslate"><span class="pre">datetime</span></code> module’s <em>datetime</em> special variable type.  The <code class="docutils literal notranslate"><span class="pre">datetime</span></code> module’s <em>datetime</em> variable has built-in features that enable Python to do things like add on a day (e.g. add a day to <span class="math notranslate nohighlight">\(1/31/2013\)</span> to get <span class="math notranslate nohighlight">\(2/1/2013\)</span>).</p>
+<p><strong>Remember</strong>: our goal is not to make things easy today, our goal is to be smart enough to make things easy for the rest of our lives!</p>
+<p>Begin by importing the <code class="docutils literal notranslate"><span class="pre">datetime</span></code> module</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">date</span></code> column in our <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame is not a <code class="docutils literal notranslate"><span class="pre">datetime</span></code> variable.  We will create a new column, <code class="docutils literal notranslate"><span class="pre">dt</span></code>, that is.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">datetime</span></code> module has a function <code class="docutils literal notranslate"><span class="pre">datetime.datetime.strptime()</span></code> that takes a date and converts it into a special <code class="docutils literal notranslate"><span class="pre">datetime</span></code> variable.  Similarly the function <code class="docutils literal notranslate"><span class="pre">datetime.datetime.timedelta(days=1)</span></code> is how we could add <span class="math notranslate nohighlight">\(1\)</span> day to our date.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">20110131</span>
+<span class="n">x_dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">&#39;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x_dt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x_dt</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20110131
+2011-01-31 00:00:00
+20110132
+2011-02-01 00:00:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s break down what happens in <code class="docutils literal notranslate"><span class="pre">x_dt</span> <span class="pre">=</span> <span class="pre">datetime.datetime.strptime(str(x),</span> <span class="pre">'%Y%m%d')</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x_dt</span> <span class="pre">=</span></code> : define a new variable <code class="docutils literal notranslate"><span class="pre">x_dt</span></code> equal to…</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datetime.datetime.strptime()</span></code> : the <code class="docutils literal notranslate"><span class="pre">datetime</span></code> function capable of converting integer or string dates into <code class="docutils literal notranslate"><span class="pre">datetime</span></code> variables</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str(x)</span></code> : we happened to define x as an <em>integer</em>, so <code class="docutils literal notranslate"><span class="pre">str()</span></code> is the function we use to convert it to a <em>string</em></p>
+<ul>
+<li><p>Remember, <em>integers</em> are variables where we can ask Python to do <code class="docutils literal notranslate"><span class="pre">x/2</span></code> and it understands what to do</p></li>
+<li><p>In contrast, a string like <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">'dog'</span></code> does not have mathematical properties, and Python will freak out if you ask it to do <code class="docutils literal notranslate"><span class="pre">y/2</span></code></p></li>
+<li><p>It just so happens that the <code class="docutils literal notranslate"><span class="pre">strptime()</span></code> function expects <em>string</em> arguments and not <em>integers</em></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'%Y%m%d'</span></code> : this is how we tell the <code class="docutils literal notranslate"><span class="pre">strptime()</span></code> function what the string date is formatted like – lookup the codes <a class="reference external" href="http://strftime.org/">here</a></p>
+<ul>
+<li><p>‘20110131’ is of type ‘%Y%m%d’</p></li>
+<li><p>‘11Jan31’ is of type ‘%y%b%d’</p></li>
+<li><p>‘31January2011’ is of type ‘%d%B%Y’</p></li>
+</ul>
+</li>
+</ul>
+<p>To add a new column to <code class="docutils literal notranslate"><span class="pre">data</span></code>, all we need to do is put <code class="docutils literal notranslate"><span class="pre">data['dt']</span> <span class="pre">=</span> </code> and then tell Python what this column should be equal to.  For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/learning-fintech/data/master/stocks/all_stocks_5yr.csv.gz&#39;</span><span class="p">)</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;dt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>open</th>
+      <th>high</th>
+      <th>low</th>
+      <th>close</th>
+      <th>volume</th>
+      <th>Name</th>
+      <th>ret</th>
+      <th>Mkt</th>
+      <th>SMB</th>
+      <th>HML</th>
+      <th>RMW</th>
+      <th>CMA</th>
+      <th>RF</th>
+      <th>dt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2013-02-08</td>
+      <td>45.07</td>
+      <td>45.35</td>
+      <td>45.00</td>
+      <td>45.08</td>
+      <td>1824755</td>
+      <td>A</td>
+      <td>NaN</td>
+      <td>0.58</td>
+      <td>0.03</td>
+      <td>-0.21</td>
+      <td>0.12</td>
+      <td>-0.45</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2013-02-11</td>
+      <td>45.17</td>
+      <td>45.18</td>
+      <td>44.45</td>
+      <td>44.60</td>
+      <td>2915405</td>
+      <td>A</td>
+      <td>-0.010648</td>
+      <td>-0.08</td>
+      <td>-0.03</td>
+      <td>0.39</td>
+      <td>-0.18</td>
+      <td>0.28</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2013-02-12</td>
+      <td>44.81</td>
+      <td>44.95</td>
+      <td>44.50</td>
+      <td>44.62</td>
+      <td>2373731</td>
+      <td>A</td>
+      <td>0.000448</td>
+      <td>0.16</td>
+      <td>0.26</td>
+      <td>0.71</td>
+      <td>-0.54</td>
+      <td>0.45</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2013-02-13</td>
+      <td>44.81</td>
+      <td>45.24</td>
+      <td>44.68</td>
+      <td>44.75</td>
+      <td>2052338</td>
+      <td>A</td>
+      <td>0.002913</td>
+      <td>0.14</td>
+      <td>0.08</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.04</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2013-02-14</td>
+      <td>44.72</td>
+      <td>44.78</td>
+      <td>44.36</td>
+      <td>44.58</td>
+      <td>3826245</td>
+      <td>A</td>
+      <td>-0.003799</td>
+      <td>0.11</td>
+      <td>0.32</td>
+      <td>0.12</td>
+      <td>-0.30</td>
+      <td>-0.21</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">data['dt']</span> <span class="pre">=</span> <span class="pre">1</span></code> creates a new column <code class="docutils literal notranslate"><span class="pre">dt</span></code> equal to all 1s.</p>
+<p>We want to take the column <code class="docutils literal notranslate"><span class="pre">date</span></code> and use the <code class="docutils literal notranslate"><span class="pre">strptime()</span></code> function to make a column <code class="docutils literal notranslate"><span class="pre">dt</span></code></p>
+<p>Fortunately, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> has a function <code class="docutils literal notranslate"><span class="pre">to_datetime()</span></code> that works like the <code class="docutils literal notranslate"><span class="pre">strptime()</span></code> function but it can convert and entire column all at once</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;dt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>open</th>
+      <th>high</th>
+      <th>low</th>
+      <th>close</th>
+      <th>volume</th>
+      <th>Name</th>
+      <th>ret</th>
+      <th>Mkt</th>
+      <th>SMB</th>
+      <th>HML</th>
+      <th>RMW</th>
+      <th>CMA</th>
+      <th>RF</th>
+      <th>dt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2013-02-08</td>
+      <td>45.07</td>
+      <td>45.35</td>
+      <td>45.00</td>
+      <td>45.08</td>
+      <td>1824755</td>
+      <td>A</td>
+      <td>NaN</td>
+      <td>0.58</td>
+      <td>0.03</td>
+      <td>-0.21</td>
+      <td>0.12</td>
+      <td>-0.45</td>
+      <td>0.0</td>
+      <td>2013-02-08</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2013-02-11</td>
+      <td>45.17</td>
+      <td>45.18</td>
+      <td>44.45</td>
+      <td>44.60</td>
+      <td>2915405</td>
+      <td>A</td>
+      <td>-0.010648</td>
+      <td>-0.08</td>
+      <td>-0.03</td>
+      <td>0.39</td>
+      <td>-0.18</td>
+      <td>0.28</td>
+      <td>0.0</td>
+      <td>2013-02-11</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2013-02-12</td>
+      <td>44.81</td>
+      <td>44.95</td>
+      <td>44.50</td>
+      <td>44.62</td>
+      <td>2373731</td>
+      <td>A</td>
+      <td>0.000448</td>
+      <td>0.16</td>
+      <td>0.26</td>
+      <td>0.71</td>
+      <td>-0.54</td>
+      <td>0.45</td>
+      <td>0.0</td>
+      <td>2013-02-12</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2013-02-13</td>
+      <td>44.81</td>
+      <td>45.24</td>
+      <td>44.68</td>
+      <td>44.75</td>
+      <td>2052338</td>
+      <td>A</td>
+      <td>0.002913</td>
+      <td>0.14</td>
+      <td>0.08</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.04</td>
+      <td>0.0</td>
+      <td>2013-02-13</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2013-02-14</td>
+      <td>44.72</td>
+      <td>44.78</td>
+      <td>44.36</td>
+      <td>44.58</td>
+      <td>3826245</td>
+      <td>A</td>
+      <td>-0.003799</td>
+      <td>0.11</td>
+      <td>0.32</td>
+      <td>0.12</td>
+      <td>-0.30</td>
+      <td>-0.21</td>
+      <td>0.0</td>
+      <td>2013-02-14</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>To the human eye, the columns <code class="docutils literal notranslate"><span class="pre">date</span></code> and <code class="docutils literal notranslate"><span class="pre">dt</span></code> look identical.  That’s because <code class="docutils literal notranslate"><span class="pre">datetime</span></code> dates still print out nicely as formatted strings.</p>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">.dtypes</span></code> function that is built-in to <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame objects to confirm that <code class="docutils literal notranslate"><span class="pre">dt</span></code> is indeed a <code class="docutils literal notranslate"><span class="pre">datetime</span></code> variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>date              object
+open             float64
+high             float64
+low              float64
+close            float64
+volume             int64
+Name              object
+ret              float64
+Mkt              float64
+SMB              float64
+HML              float64
+RMW              float64
+CMA              float64
+RF               float64
+dt        datetime64[ns]
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>String columns will be reported as <code class="docutils literal notranslate"><span class="pre">object</span></code> types in pandas.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ch3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="4_slicing_dataframes.html" title="previous page">Selecting Pieces of DataFrames</a>
+    <a class='right-next' id="next-link" href="6_descriptives.html" title="next page">Descriptive Statistics</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By James Nordlund, Ph.D.<br/>
+        
+          <div class="extra_footer">
+            <p>
+  Copyright 2021.  License: CC BY-NC-ND 4.0
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

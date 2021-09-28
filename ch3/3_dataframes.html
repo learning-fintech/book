@@ -1,0 +1,1146 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DataFrames &#8212; Financial Modeling and Analytics Using Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Selecting Pieces of DataFrames" href="4_slicing_dataframes.html" />
+    <link rel="prev" title="Dictionaries and the Robo-Advisor" href="2_robo_dictionary.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Financial Modeling and Analytics Using Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Financial Modeling and Analytics
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python Preliminaries - Principles and Preferred Practices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/1_variablesAndData.html">
+   Variables and Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/2_math.html">
+   Math with Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/3_strings.html">
+   Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/3b_strings.html">
+   More Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4_functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4b_functions.html">
+   More Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4c_functions.html">
+   Combine Multiple Functions for Maximal Efficiency
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Learning to Love the Logic of Loops and Lists
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/1_loops.html">
+   Loops and Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/2_lists.html">
+   Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/3_list_comprehension.html">
+   List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/4_lifetime_savings.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   Loops and Delayed Savings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/5_robo_advising.html">
+   Robo-Advising
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Dictionaries, DataFrames, Descriptives, and Diagnostics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_dictionaries.html">
+   Dictionaries and DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_robo_dictionary.html">
+   Dictionaries and the Robo-Advisor
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4_slicing_dataframes.html">
+   Selecting Pieces of DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5_dates_and_dataframes.html">
+   Dates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6_descriptives.html">
+   Descriptive Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7_simulation.html">
+   Simulating Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8_robo_sim.html">
+   Simulating Returns for the Robo-Advisor
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Can We Craft Causal Conclusions?
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/1_regression_data.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/2_causal_diagrams.html">
+   Causal Graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/3_regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/4_regression_details.html">
+   Regression Details
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ch3/3_dataframes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/learning-fintech/book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/learning-fintech/book/issues/new?title=Issue%20on%20page%20%2Fch3/3_dataframes.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/learning-fintech/book/master?urlpath=tree/ch3/3_dataframes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="dataframes">
+<h1>DataFrames<a class="headerlink" href="#dataframes" title="Permalink to this headline">¶</a></h1>
+<p>Let’s continue with the example of stock return data, and now suppose that we want to run a CAPM equation to estimate a firm’s cost of equity.  Recall that CAPM states</p>
+<div class="math notranslate nohighlight">
+\[
+r_{i,t}-r_{f,t} = \beta_i(r_{m,t} - r_{f,t})
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_{i,t}\)</span> is the stock return for firm <span class="math notranslate nohighlight">\(i\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(r_{f,t}\)</span> is the risk-free rate at time <span class="math notranslate nohighlight">\(t\)</span>, and <span class="math notranslate nohighlight">\(r_{m,t}\)</span> is the market return at time <span class="math notranslate nohighlight">\(t\)</span>.  The difference <span class="math notranslate nohighlight">\(r_{m,t}-r_{f,t}\)</span> is called the <em>market risk premium</em>.</p>
+<p>For the sake of continuity, the daily stock return data will match that of the previous section, so that the keys in <code class="docutils literal notranslate"><span class="pre">daily_dict</span></code> correspond to <span class="math notranslate nohighlight">\(\text{Date}\)</span> and the valeus in <code class="docutils literal notranslate"><span class="pre">daily_dict</span></code> correspond to <span class="math notranslate nohighlight">\(r_{i,t}\)</span> in the table below.  Now let’s add in information on the market return and the risk free rate.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Date</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(r_i\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(r_m\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(r_f\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>7/8/19</p></td>
+<td><p>0.03</p></td>
+<td><p>0.02</p></td>
+<td><p>0.01</p></td>
+</tr>
+<tr class="row-odd"><td><p>7/9/19</p></td>
+<td><p>0.01</p></td>
+<td><p>0.01</p></td>
+<td><p>0.01</p></td>
+</tr>
+<tr class="row-even"><td><p>7/10/19</p></td>
+<td><p>-0.02</p></td>
+<td><p>-0.03</p></td>
+<td><p>0.01</p></td>
+</tr>
+<tr class="row-odd"><td><p>7/11/19</p></td>
+<td><p>0.01</p></td>
+<td><p>0.02</p></td>
+<td><p>0.01</p></td>
+</tr>
+<tr class="row-even"><td><p>7/12/19</p></td>
+<td><p>-0.01</p></td>
+<td><p>-0.03</p></td>
+<td><p>0.01</p></td>
+</tr>
+</tbody>
+</table>
+<p>The question becomes: how do we store this information in Python?</p>
+<p>In order to estimate at a CAPM equation (which is covered in the next chapter), we will need to be able to reference <span class="math notranslate nohighlight">\(r_{i,t}\)</span>, <span class="math notranslate nohighlight">\(r_{m,t}\)</span>, and <span class="math notranslate nohighlight">\(r_{f,t}\)</span> individually, and tell Python what to do with each of these series of returns.</p>
+<p>If we use lists to keep track of everything then we will have the following:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_i</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">]</span>
+<span class="n">r_m</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.03</span><span class="p">]</span>
+<span class="n">r_f</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">]</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;7/8/19&#39;</span><span class="p">,</span> <span class="s1">&#39;7/9/19&#39;</span><span class="p">,</span> <span class="s1">&#39;7/10/19&#39;</span><span class="p">,</span> <span class="s1">&#39;7/11/19&#39;</span><span class="p">,</span> <span class="s1">&#39;7/12/19&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This is a bad practice for at least a couple of reasons.  First, one has to be extremely careful that the data line up properly so that <code class="docutils literal notranslate"><span class="pre">r_i[k]</span></code>, <code class="docutils literal notranslate"><span class="pre">r_m[k]</span></code>, and <code class="docutils literal notranslate"><span class="pre">r_f[k]</span></code> correspond to returns on the same date for every <code class="docutils literal notranslate"><span class="pre">k</span></code>.  Suppose that there is some missing data for some firm <span class="math notranslate nohighlight">\(j\)</span> such that <code class="docutils literal notranslate"><span class="pre">r_j</span> <span class="pre">=</span> <span class="pre">[0.05,</span> <span class="pre">0.02,</span> <span class="pre">0.03,</span> <span class="pre">-0.04]</span></code>.  Without any additional information, it is impossible to track down which data point for firm <span class="math notranslate nohighlight">\(j\)</span> is missing.  Second, it’s difficult to reference returns at a particular date.  Suppose that you want to know the market return on <code class="docutils literal notranslate"><span class="pre">7/11/19</span></code>.  You would first have to determine that <code class="docutils literal notranslate"><span class="pre">t[k]</span> <span class="pre">=</span> <span class="pre">'7/11/19'</span></code> when <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">=</span> <span class="pre">3</span></code> and then go look up <code class="docutils literal notranslate"><span class="pre">r_m[3]</span></code> to get the market return.  Note that neither of these considerations imply that it is impossible to use lists to hold all the requisite data, it’s just inconvenient for the programmer.  Remember, Python is supposed to make your life easier.</p>
+<p>Suppose instead that we use a dictionary based approach to hold all of the data.  One way to do this is to construct a <em>nested dictionary</em>.  Nested dictionaries look like:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">nested_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;finance&#39;</span><span class="p">:</span>
+                <span class="p">{</span><span class="s1">&#39;verb&#39;</span><span class="p">:</span><span class="s1">&#39;to supply with money or capital&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;noun&#39;</span><span class="p">:</span><span class="s1">&#39;the management of revenues&#39;</span><span class="p">},</span>
+               <span class="s1">&#39;rate&#39;</span><span class="p">:</span>
+                <span class="p">{</span><span class="s1">&#39;verb&#39;</span><span class="p">:</span><span class="s1">&#39;to estimate the value or worth of&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;noun&#39;</span><span class="p">:</span><span class="s1">&#39;the amount of a charge or payment with reference to some basis of calculation&#39;</span><span class="p">}</span>
+              <span class="p">}</span>
+</pre></div>
+</div>
+<p>Here there is a dictionary with keys <code class="docutils literal notranslate"><span class="pre">'finance'</span></code> and <code class="docutils literal notranslate"><span class="pre">'rate'</span></code>.  The key <code class="docutils literal notranslate"><span class="pre">'finance'</span></code> has a value which is itself a dictionary: one key named <code class="docutils literal notranslate"><span class="pre">'verb'</span></code> which has value equal to the definition of “finance” used as a verb and another key named <code class="docutils literal notranslate"><span class="pre">'noun'</span></code> which has value equal to the definition of “finance” used as a noun.  Likewise the key <code class="docutils literal notranslate"><span class="pre">'rate'</span></code> has a value which is itself a dictionary.</p>
+<p>If one enters <code class="docutils literal notranslate"><span class="pre">nested_dict['finance']</span></code>, Python will return the dictionary <code class="docutils literal notranslate"><span class="pre">{'verb':'to</span> <span class="pre">supply</span> <span class="pre">with</span> <span class="pre">money</span> <span class="pre">or</span> <span class="pre">capital',</span> <span class="pre">'noun':'the</span> <span class="pre">management</span> <span class="pre">of</span> <span class="pre">revenues'}</span></code>.  Thus, to look up what the noun usage of “finance” is, one simply types <code class="docutils literal notranslate"><span class="pre">nested_dict['finance']['noun']</span></code>, which tells Python to look up the <code class="docutils literal notranslate"><span class="pre">noun</span></code> value to the dictionary value given by the key <code class="docutils literal notranslate"><span class="pre">'finance'</span></code>.</p>
+<p>In the conext of the current problem, a nested dictionary might look like:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">daily_returns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;r_i&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;7/8/19&#39;</span><span class="p">:</span><span class="mf">0.03</span><span class="p">,</span> <span class="s1">&#39;7/9/19&#39;</span><span class="p">:</span><span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;7/10/19&#39;</span><span class="p">:</span><span class="o">-</span><span class="mf">0.02</span><span class="p">,</span> <span class="s1">&#39;7/11/19&#39;</span><span class="p">:</span><span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;7/12/19&#39;</span><span class="p">:</span><span class="o">-</span><span class="mf">0.01</span><span class="p">},</span>
+                 <span class="s1">&#39;r_m&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;7/8/19&#39;</span><span class="p">:</span><span class="mf">0.02</span><span class="p">,</span> <span class="s1">&#39;7/9/19&#39;</span><span class="p">:</span><span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;7/10/19&#39;</span><span class="p">:</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="s1">&#39;7/11/19&#39;</span><span class="p">:</span><span class="mf">0.02</span><span class="p">,</span> <span class="s1">&#39;7/12/19&#39;</span><span class="p">:</span><span class="o">-</span><span class="mf">0.03</span><span class="p">},</span>
+                 <span class="s1">&#39;r_f&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;7/8/19&#39;</span><span class="p">:</span><span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;7/9/19&#39;</span><span class="p">:</span><span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;7/10/19&#39;</span><span class="p">:</span><span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;7/11/19&#39;</span><span class="p">:</span><span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;7/12/19&#39;</span><span class="p">:</span><span class="mf">0.01</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>The dictionary approach adds a convenience to the problem.  Now, if one wants to look up the market return on <code class="docutils literal notranslate"><span class="pre">7/11/19</span></code> one simply has to type <code class="docutils literal notranslate"><span class="pre">daily_returns['r_m']['7/11/19']</span></code>.</p>
+<p>Unfortunately, this approach still isn’t perfect.  Remember, CAPM tells us that the excess return <span class="math notranslate nohighlight">\(r_{i,t}-r_{f,t}\)</span> is defined by a linear function of the market risk premium <span class="math notranslate nohighlight">\(r_{m,t}-r_{f,t}\)</span>.  Therefore, what we want to do is to be able to tell Python to calculate the excess return and the market risk premium.  This is doable with a nested dictionary format, but it’s a little complicated.  One would have to do something like the following (feel free to skip this code):</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">daily_returns</span><span class="p">[</span><span class="s1">&#39;r_excess&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">daily_returns</span><span class="p">[</span><span class="s1">&#39;r_riskpremium&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">daily_returns</span><span class="p">[</span><span class="s1">&#39;r_f&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">daily_returns</span><span class="p">[</span><span class="s1">&#39;r_excess&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">t</span><span class="p">:</span><span class="n">daily_returns</span><span class="p">[</span><span class="s1">&#39;r_i&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">]</span><span class="o">-</span><span class="n">daily_returns</span><span class="p">[</span><span class="s1">&#39;r_f&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">])</span>
+    <span class="n">daily_returns</span><span class="p">[</span><span class="s1">&#39;r_riskpremium&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">t</span><span class="p">:</span><span class="n">daily_returns</span><span class="p">[</span><span class="s1">&#39;r_m&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">]</span><span class="o">-</span><span class="n">daily_returns</span><span class="p">[</span><span class="s1">&#39;r_f&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>This is five long lines of code.  That means lots of typing and plenty of room for typos.  Nested dictionaries are <em>not</em> the recommended way to hold and manage data.</p>
+<p>So what <em>is</em> the recommended way to hold data in Python?  We need to use pandas.</p>
+<p>Pandas is the standard module for working with datasets in Python, written by Wes McKinney while at AQR Capital Management.  A <strong>module</strong> is a collection of user-defined functions, written by one or more people, and made available for use by everyone.  The <code class="docutils literal notranslate"><span class="pre">wacc()</span></code> function from earlier in this chapter is an example of a user-defined function.  When a set of userful and related functions are created, the author(s) of these functions sometimes choose to share this set of functions with the world to make Python an even more convenient language for everyone else.</p>
+<p>Modules that are not part of the standard Python library need to be <strong>imported</strong> using an import statement like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
+</pre></div>
+</div>
+<p>In the above, the module <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is imported.  What this means is that now the functions available under <code class="docutils literal notranslate"><span class="pre">pandas</span></code> are available for you to use.  If you do not import the pandas module, the functions inside of it are unkown to Python.</p>
+<p>To reference the functions inside of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> module, we use <code class="docutils literal notranslate"><span class="pre">pandas.&lt;function_name&gt;()</span></code>.  For example, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> has a function called <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>, so we would use this function by typing <code class="docutils literal notranslate"><span class="pre">pandas.read_csv()</span></code>.</p>
+<p>There are some modules, like <code class="docutils literal notranslate"><span class="pre">numpy</span></code> or <code class="docutils literal notranslate"><span class="pre">pandas</span></code> that are so frequently used in Python programming, they have unofficial ‘’standard’’ ways of importing the module with an abbreviation for our later convience.  Two examples are given below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Basically, <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code> tells Python that we want to import <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, but give it a nickname of <code class="docutils literal notranslate"><span class="pre">np</span></code> so that we can refer to the module by that nickname.</p>
+<p>Now, instead of having to type <code class="docutils literal notranslate"><span class="pre">pandas.read_csv()</span></code> as before, we simply refer to <code class="docutils literal notranslate"><span class="pre">pandas</span></code> by its nickname and type <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code>.  It may not seem like a huge shortcut, but it’s a very common.</p>
+<p>We will use <code class="docutils literal notranslate"><span class="pre">pandas</span></code> for a lot of our work in this class.  Note that tutorials and recipes (example pieces of code to perform fairly common tasks) are easy to find <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/tutorials.html">online</a>.</p>
+<p>The stock return data that we will use is included with this handout, so we will read the data from CoCalc.  This highlights two important features of the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function.  First, it can pull files from a website directly (as long as the file is formatted as a csv file).  Second, it can read compressed files (note that the file name used here ends with <code class="docutils literal notranslate"><span class="pre">.gz</span></code>, a type of file compression).  File compression is an important option because of the convenience it provides.  Note that the stock data we have here would be too large to be allowed to be hosted for free on GitHub if the file were not compressed.  Moreover, other cloud-based storage solutions like Amazon S3 will charge based on the amount of storage you request, so having the ability to use compressed files means you spend less money on storage costs.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function <em>returns</em> a value.  The type of that value is not a number, string, list, or dictionary, but rather a pandas-specific variable type called a <strong>DataFrame</strong>.  In a moment, you’ll see what one looks like.  DataFrames are essentially a nested dictionary type of structure, but with a ton of convenience features added in to make them easy to work with.  For now, use the <code class="docutils literal notranslate"><span class="pre">.read_csv()</span></code> function and then tell Python that the returned value should be set to a variable named <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/learning-fintech/data/master/stocks/all_stocks_5yr.csv.gz&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">data</span></code> variable is a pandas DataFrame.  Just like string variables have the <code class="docutils literal notranslate"><span class="pre">.upper()</span></code> function to translate them into all upper case, and dictionary variables have the <code class="docutils literal notranslate"><span class="pre">.keys()</span></code> function to get the keys (words) in the dictionary, DataFrame variables have some special functions specific to them.  One of these is called <code class="docutils literal notranslate"><span class="pre">.head()</span></code>, which prints out a snippet of the data file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>open</th>
+      <th>high</th>
+      <th>low</th>
+      <th>close</th>
+      <th>volume</th>
+      <th>Name</th>
+      <th>ret</th>
+      <th>Mkt</th>
+      <th>SMB</th>
+      <th>HML</th>
+      <th>RMW</th>
+      <th>CMA</th>
+      <th>RF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2013-02-08</td>
+      <td>45.07</td>
+      <td>45.35</td>
+      <td>45.00</td>
+      <td>45.08</td>
+      <td>1824755</td>
+      <td>A</td>
+      <td>NaN</td>
+      <td>0.58</td>
+      <td>0.03</td>
+      <td>-0.21</td>
+      <td>0.12</td>
+      <td>-0.45</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2013-02-11</td>
+      <td>45.17</td>
+      <td>45.18</td>
+      <td>44.45</td>
+      <td>44.60</td>
+      <td>2915405</td>
+      <td>A</td>
+      <td>-0.010648</td>
+      <td>-0.08</td>
+      <td>-0.03</td>
+      <td>0.39</td>
+      <td>-0.18</td>
+      <td>0.28</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2013-02-12</td>
+      <td>44.81</td>
+      <td>44.95</td>
+      <td>44.50</td>
+      <td>44.62</td>
+      <td>2373731</td>
+      <td>A</td>
+      <td>0.000448</td>
+      <td>0.16</td>
+      <td>0.26</td>
+      <td>0.71</td>
+      <td>-0.54</td>
+      <td>0.45</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2013-02-13</td>
+      <td>44.81</td>
+      <td>45.24</td>
+      <td>44.68</td>
+      <td>44.75</td>
+      <td>2052338</td>
+      <td>A</td>
+      <td>0.002913</td>
+      <td>0.14</td>
+      <td>0.08</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.04</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2013-02-14</td>
+      <td>44.72</td>
+      <td>44.78</td>
+      <td>44.36</td>
+      <td>44.58</td>
+      <td>3826245</td>
+      <td>A</td>
+      <td>-0.003799</td>
+      <td>0.11</td>
+      <td>0.32</td>
+      <td>0.12</td>
+      <td>-0.30</td>
+      <td>-0.21</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In the printout, names are marked in bold font.  The csv file has column headers <code class="docutils literal notranslate"><span class="pre">['date',</span> <span class="pre">'open',</span> <span class="pre">'high',</span> <span class="pre">'low',</span> <span class="pre">'close',</span> <span class="pre">'volume',</span> <span class="pre">'Name',</span> <span class="pre">'ret',</span> <span class="pre">'Mkt',</span> <span class="pre">'SMB',</span> <span class="pre">'HML',</span> <span class="pre">'RMW',</span> <span class="pre">'CMA',</span> <span class="pre">'RF']</span></code> in the first row of the file (this would be row 1 if we opened the csv file in Excel).  The pandas function <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> by default will take this first row to be the names of the columns.  This allows us to reference the column of data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;close&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0         45.08
+1         44.60
+2         44.62
+3         44.75
+4         44.58
+          ...  
+619035    77.82
+619036    76.78
+619037    73.83
+619038    73.27
+619039    73.86
+Name: close, Length: 619040, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, Python smartly prints out only a small subset of the <code class="docutils literal notranslate"><span class="pre">'close'</span></code> column of data.  The first five rows (row numbers 0-5) are printed, as well as the last five rows (row numbers 619035-619039).</p>
+<p>Be careful, names are given as strings.  Python is fine with <code class="docutils literal notranslate"><span class="pre">data['close']</span></code>, but if you type <code class="docutils literal notranslate"><span class="pre">data[close]</span></code> then Python will think you’re trying to use a variable <code class="docutils literal notranslate"><span class="pre">close</span></code> to store the column name.  For example if one were to type</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">close</span> <span class="o">=</span> <span class="s1">&#39;open&#39;</span>
+<span class="n">data</span><span class="p">[</span><span class="n">close</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>then Python would give back the data in column <code class="docutils literal notranslate"><span class="pre">'open'</span></code>.</p>
+<p>Note that there are bold numbers 0-4 running down the left hand side of the <code class="docutils literal notranslate"><span class="pre">.head()</span></code> printout.  This is because the first row of data (row 2, in Excel) is read in an by default given the name <code class="docutils literal notranslate"><span class="pre">0</span></code> by Python (because Python starts counting at zero).  Hence, we could refer to a row based on this name, just like we do with a column name.  Note that if you type <code class="docutils literal notranslate"><span class="pre">data[0]</span></code>, Python will get confused.  The name inside square brackets is, according to pandas’ rules for DataFrame variables, expected to be a column name and not a row name.  For the moment, let’s skip over how to refer to the first row of data by using the name <code class="docutils literal notranslate"><span class="pre">0</span></code> printed on the left hand side of the printout above.</p>
+<p>A very typical use case with DataFrames is to look up a row (or set of rows) based on a value stored in one of the columns of the DataFrame.  For example, we can select a row based on the value for <code class="docutils literal notranslate"><span class="pre">date</span></code>.  This would be achieved by entering:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2013-02-14&#39;</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>open</th>
+      <th>high</th>
+      <th>low</th>
+      <th>close</th>
+      <th>volume</th>
+      <th>Name</th>
+      <th>ret</th>
+      <th>Mkt</th>
+      <th>SMB</th>
+      <th>HML</th>
+      <th>RMW</th>
+      <th>CMA</th>
+      <th>RF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>2013-02-14</td>
+      <td>44.7200</td>
+      <td>44.7800</td>
+      <td>44.3600</td>
+      <td>44.5800</td>
+      <td>3826245</td>
+      <td>A</td>
+      <td>-0.003799</td>
+      <td>0.11</td>
+      <td>0.32</td>
+      <td>0.12</td>
+      <td>-0.3</td>
+      <td>-0.21</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1263</th>
+      <td>2013-02-14</td>
+      <td>14.9400</td>
+      <td>14.9600</td>
+      <td>13.1600</td>
+      <td>13.9900</td>
+      <td>31879900</td>
+      <td>AAL</td>
+      <td>-0.045703</td>
+      <td>0.11</td>
+      <td>0.32</td>
+      <td>0.12</td>
+      <td>-0.3</td>
+      <td>-0.21</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2522</th>
+      <td>2013-02-14</td>
+      <td>78.6600</td>
+      <td>79.7200</td>
+      <td>78.5850</td>
+      <td>78.8400</td>
+      <td>1005376</td>
+      <td>AAP</td>
+      <td>-0.001646</td>
+      <td>0.11</td>
+      <td>0.32</td>
+      <td>0.12</td>
+      <td>-0.3</td>
+      <td>-0.21</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3781</th>
+      <td>2013-02-14</td>
+      <td>66.3599</td>
+      <td>67.3771</td>
+      <td>66.2885</td>
+      <td>66.6556</td>
+      <td>88809154</td>
+      <td>AAPL</td>
+      <td>-0.000899</td>
+      <td>0.11</td>
+      <td>0.32</td>
+      <td>0.12</td>
+      <td>-0.3</td>
+      <td>-0.21</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5040</th>
+      <td>2013-02-14</td>
+      <td>35.0500</td>
+      <td>36.7300</td>
+      <td>35.0100</td>
+      <td>36.5700</td>
+      <td>7570052</td>
+      <td>ABBV</td>
+      <td>0.036859</td>
+      <td>0.11</td>
+      <td>0.32</td>
+      <td>0.12</td>
+      <td>-0.3</td>
+      <td>-0.21</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>612749</th>
+      <td>2013-02-14</td>
+      <td>28.2200</td>
+      <td>28.6150</td>
+      <td>28.2050</td>
+      <td>28.4700</td>
+      <td>927050</td>
+      <td>XYL</td>
+      <td>0.007431</td>
+      <td>0.11</td>
+      <td>0.32</td>
+      <td>0.12</td>
+      <td>-0.3</td>
+      <td>-0.21</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>614008</th>
+      <td>2013-02-14</td>
+      <td>64.2700</td>
+      <td>64.5360</td>
+      <td>63.7700</td>
+      <td>63.8900</td>
+      <td>3949356</td>
+      <td>YUM</td>
+      <td>-0.008073</td>
+      <td>0.11</td>
+      <td>0.32</td>
+      <td>0.12</td>
+      <td>-0.3</td>
+      <td>-0.21</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>615267</th>
+      <td>2013-02-14</td>
+      <td>75.8600</td>
+      <td>76.4000</td>
+      <td>75.7500</td>
+      <td>76.3400</td>
+      <td>860104</td>
+      <td>ZBH</td>
+      <td>0.004474</td>
+      <td>0.11</td>
+      <td>0.32</td>
+      <td>0.12</td>
+      <td>-0.3</td>
+      <td>-0.21</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>616526</th>
+      <td>2013-02-14</td>
+      <td>24.6800</td>
+      <td>24.7850</td>
+      <td>24.5100</td>
+      <td>24.6300</td>
+      <td>2789414</td>
+      <td>ZION</td>
+      <td>-0.004446</td>
+      <td>0.11</td>
+      <td>0.32</td>
+      <td>0.12</td>
+      <td>-0.3</td>
+      <td>-0.21</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>617785</th>
+      <td>2013-02-14</td>
+      <td>33.3900</td>
+      <td>33.4500</td>
+      <td>32.7700</td>
+      <td>33.2700</td>
+      <td>2954324</td>
+      <td>ZTS</td>
+      <td>-0.008346</td>
+      <td>0.11</td>
+      <td>0.32</td>
+      <td>0.12</td>
+      <td>-0.3</td>
+      <td>-0.21</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>476 rows × 14 columns</p>
+</div></div></div>
+</div>
+<p>At the bottom of this truncated prinout, Python informs us that there are 474 rows of data.  That is, we have 474 different stocks with return data for February 14, 2013.</p>
+<p>Let’s break down what the line of code does:</p>
+<p><span class="math notranslate nohighlight">\(\color{red}{\texttt{data[}}\color{blue}{\texttt{data['date']}}\color{black}{\textbf{==}\texttt{'2013-02-14'}}\color{red}{\texttt{]}}\)</span></p>
+<p>Work from the inside (stuff inside the red text) out.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\color{blue}{\texttt{data['date']}}\)</span>: look up column of data named <code class="docutils literal notranslate"><span class="pre">date</span></code></p></li>
+<li><p><span class="math notranslate nohighlight">\(\textbf{==}\texttt{'2013-02-14'}\)</span>: check whether each row in the column named <code class="docutils literal notranslate"><span class="pre">date</span></code> equals <code class="docutils literal notranslate"><span class="pre">'2013-02-14'</span></code></p></li>
+</ul>
+<p>Thus, <span class="math notranslate nohighlight">\(\color{blue}{\texttt{data['date']}}\color{black}{==\texttt{'2013-02-14'}}\)</span> compares each row in <code class="docutils literal notranslate"><span class="pre">date</span></code> to the value <code class="docutils literal notranslate"><span class="pre">'2013-02-14'</span></code>.  Rows whether the value in <code class="docutils literal notranslate"><span class="pre">date</span></code> match this string are marked <code class="docutils literal notranslate"><span class="pre">True</span></code>, while rows that do not match this string are marked <code class="docutils literal notranslate"><span class="pre">False</span></code>.  Suppose that this list of rows looks like <span class="math notranslate nohighlight">\(\texttt{[True, False, False, True, ...]}\)</span>.</p>
+<p>Then, <span class="math notranslate nohighlight">\(\color{red}{\texttt{data[}}\color{black}{\texttt{[True, False, False, True, ...]}}\color{red}{\texttt{]}}\)</span> would select the rows that are marked <code class="docutils literal notranslate"><span class="pre">True</span></code> and ignore the rows marked <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>As we saw in earlier, we can test for whether the date in a given row matches our day of interest with the python statement: <code class="docutils literal notranslate"><span class="pre">==</span></code>.  Recall:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>if we want to test whether <code class="docutils literal notranslate"><span class="pre">x</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">y</span></code>, we should <em>not</em> use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+</pre></div>
+</div>
+<p>because Python will interpret this as setting <code class="docutils literal notranslate"><span class="pre">x</span></code> <em>equal to</em> whatever value <code class="docutils literal notranslate"><span class="pre">y</span></code> is.  We should instead use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
+</pre></div>
+</div>
+<p>which in this case will return <code class="docutils literal notranslate"><span class="pre">False</span></code>, because <code class="docutils literal notranslate"><span class="pre">x</span></code> is currently set equal to 1 and <code class="docutils literal notranslate"><span class="pre">y</span></code> is set equal to 2.</p>
+<p>Therefore, if we issue the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2013-02-14&#39;</span>
+</pre></div>
+</div>
+<p>what Python will do is check each row for whether the <code class="docutils literal notranslate"><span class="pre">date</span></code> in that row is equal to the value <code class="docutils literal notranslate"><span class="pre">'2013-02-14'</span></code>.  Again, be careful about quotations!</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">data['date']</span> <span class="pre">==</span> <span class="pre">'2013-02-14'</span></code> : Python checks for whether <code class="docutils literal notranslate"><span class="pre">date</span></code> is equal to the <em>string</em> value <code class="docutils literal notranslate"><span class="pre">'2013-02-14'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data['date']</span> <span class="pre">==</span> <span class="pre">2013-02-14</span></code> : Python checks for whether <code class="docutils literal notranslate"><span class="pre">date</span></code> is equal to some <em>integer</em> <span class="math notranslate nohighlight">\(2013-02-14\)</span>, and ends up confused because <code class="docutils literal notranslate"><span class="pre">02</span></code> is not a number and thus not something can can be subtracted from 2013.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2013-02-14&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0         False
+1         False
+2         False
+3         False
+4          True
+          ...  
+619035    False
+619036    False
+619037    False
+619038    False
+619039    False
+Name: date, Length: 619040, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>Given this list of <code class="docutils literal notranslate"><span class="pre">True</span></code>s and <code class="docutils literal notranslate"><span class="pre">False</span></code>s, we select from <code class="docutils literal notranslate"><span class="pre">data</span></code> those marked <code class="docutils literal notranslate"><span class="pre">True</span></code>.  If we take our DataFrame <span class="math notranslate nohighlight">\(\color{red}{\texttt{data}}\)</span> and give it a list of rows inside square brackets <span class="math notranslate nohighlight">\(\color{red}{\textbf{[}\text{ }\textbf{]}}\)</span>, Python will only use rows marked <code class="docutils literal notranslate"><span class="pre">True</span></code> and it will exclude rows marked <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Properties of the DataFrame variable type will be introduced as they become necessary.  For now, return to the problem of calculating an excess return and a market risk premium.  Recall that the nested dictionary solution to this problem was tedious.  In contrast, the DataFrame solution is to simply type:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;r_excess&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;RF&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Short, simple, and easily readible.  To verify that the solution is correct, print the data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>open</th>
+      <th>high</th>
+      <th>low</th>
+      <th>close</th>
+      <th>volume</th>
+      <th>Name</th>
+      <th>ret</th>
+      <th>Mkt</th>
+      <th>SMB</th>
+      <th>HML</th>
+      <th>RMW</th>
+      <th>CMA</th>
+      <th>RF</th>
+      <th>r_excess</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2013-02-08</td>
+      <td>45.07</td>
+      <td>45.35</td>
+      <td>45.00</td>
+      <td>45.08</td>
+      <td>1824755</td>
+      <td>A</td>
+      <td>NaN</td>
+      <td>0.58</td>
+      <td>0.03</td>
+      <td>-0.21</td>
+      <td>0.12</td>
+      <td>-0.45</td>
+      <td>0.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2013-02-11</td>
+      <td>45.17</td>
+      <td>45.18</td>
+      <td>44.45</td>
+      <td>44.60</td>
+      <td>2915405</td>
+      <td>A</td>
+      <td>-0.010648</td>
+      <td>-0.08</td>
+      <td>-0.03</td>
+      <td>0.39</td>
+      <td>-0.18</td>
+      <td>0.28</td>
+      <td>0.0</td>
+      <td>-0.010648</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2013-02-12</td>
+      <td>44.81</td>
+      <td>44.95</td>
+      <td>44.50</td>
+      <td>44.62</td>
+      <td>2373731</td>
+      <td>A</td>
+      <td>0.000448</td>
+      <td>0.16</td>
+      <td>0.26</td>
+      <td>0.71</td>
+      <td>-0.54</td>
+      <td>0.45</td>
+      <td>0.0</td>
+      <td>0.000448</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2013-02-13</td>
+      <td>44.81</td>
+      <td>45.24</td>
+      <td>44.68</td>
+      <td>44.75</td>
+      <td>2052338</td>
+      <td>A</td>
+      <td>0.002913</td>
+      <td>0.14</td>
+      <td>0.08</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.04</td>
+      <td>0.0</td>
+      <td>0.002913</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2013-02-14</td>
+      <td>44.72</td>
+      <td>44.78</td>
+      <td>44.36</td>
+      <td>44.58</td>
+      <td>3826245</td>
+      <td>A</td>
+      <td>-0.003799</td>
+      <td>0.11</td>
+      <td>0.32</td>
+      <td>0.12</td>
+      <td>-0.30</td>
+      <td>-0.21</td>
+      <td>0.0</td>
+      <td>-0.003799</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ch3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="2_robo_dictionary.html" title="previous page">Dictionaries and the Robo-Advisor</a>
+    <a class='right-next' id="next-link" href="4_slicing_dataframes.html" title="next page">Selecting Pieces of DataFrames</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By James Nordlund, Ph.D.<br/>
+        
+          <div class="extra_footer">
+            <p>
+  Copyright 2021.  License: CC BY-NC-ND 4.0
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

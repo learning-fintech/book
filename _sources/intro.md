@@ -12,4 +12,8 @@ followed by a cell that beings with
 ```
 # complete concept check here
 ```
-These cells are meant to be completed by the reader. You will need to open the book's notebook in an interactive environment (e.g. Google Colab) to execute code yourself and complete the concept checks.
+These cells are meant to be completed by the reader. You will need to open the book's notebook in an interactive environment (e.g. Google Colab, CoCalc) to execute code yourself and complete the concept checks.
+
+Have fun!
+
+<img src="assets/pexels-ellie-burgin-3568930.jpg" alt="chihuahua"> 

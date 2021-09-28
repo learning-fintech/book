@@ -1,0 +1,758 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops and Lists &#8212; Financial Modeling and Analytics Using Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lists" href="2_lists.html" />
+    <link rel="prev" title="Introduction" href="0_intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Financial Modeling and Analytics Using Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Financial Modeling and Analytics
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python Preliminaries - Principles and Preferred Practices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/1_variablesAndData.html">
+   Variables and Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/2_math.html">
+   Math with Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/3_strings.html">
+   Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/3b_strings.html">
+   More Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4_functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4b_functions.html">
+   More Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4c_functions.html">
+   Combine Multiple Functions for Maximal Efficiency
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Learning to Love the Logic of Loops and Lists
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Loops and Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_lists.html">
+   Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_list_comprehension.html">
+   List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4_lifetime_savings.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   Loops and Delayed Savings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5_robo_advising.html">
+   Robo-Advising
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Dictionaries, DataFrames, Descriptives, and Diagnostics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/1_dictionaries.html">
+   Dictionaries and DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/2_robo_dictionary.html">
+   Dictionaries and the Robo-Advisor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/3_dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/4_slicing_dataframes.html">
+   Selecting Pieces of DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/5_dates_and_dataframes.html">
+   Dates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/6_descriptives.html">
+   Descriptive Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/7_simulation.html">
+   Simulating Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/8_robo_sim.html">
+   Simulating Returns for the Robo-Advisor
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Can We Craft Causal Conclusions?
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/1_regression_data.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/2_causal_diagrams.html">
+   Causal Graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/3_regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/4_regression_details.html">
+   Regression Details
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ch2/1_loops.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/learning-fintech/book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/learning-fintech/book/issues/new?title=Issue%20on%20page%20%2Fch2/1_loops.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/learning-fintech/book/master?urlpath=tree/ch2/1_loops.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-loops-and-lifetime-savings">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   Loops and Lifetime Savings
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="loops-and-lists">
+<h1>Loops and Lists<a class="headerlink" href="#loops-and-lists" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="for-loops-and-lifetime-savings">
+<h2><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops and Lifetime Savings<a class="headerlink" href="#for-loops-and-lifetime-savings" title="Permalink to this headline">¶</a></h2>
+<p>Because Python is quick and easy (once you have a handle of it), it serves as a useful tool for playing out ideas.  For example, suppose that we want to visualize a savings decision:</p>
+<blockquote>
+<div><p>Once you begin contributing to a savings account, assume that you put away <span class="math notranslate nohighlight">\(x\)</span> dollars per year and expect an annual return of <span class="math notranslate nohighlight">\(r\)</span>.  How much money will you have saved in <span class="math notranslate nohighlight">\(55\)</span> years?</p>
+</div></blockquote>
+<p>Begin by defining the <em>variables</em> you need</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">0.06</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, <em>compound</em> the returns you get over the next <span class="math notranslate nohighlight">\(55\)</span> years.  Imagine that today is year 0.  At the end of year 0, you’ll have saved <span class="math notranslate nohighlight">\(x \times (1+r)\)</span>.  Then, after another, you’re year zero savings grow by another <span class="math notranslate nohighlight">\((1+r)\)</span>, and your year one savings (since you put away <span class="math notranslate nohighlight">\(x\)</span> more each year), also grows by <span class="math notranslate nohighlight">\((1+r)\)</span>.  The following table helps visualize the idea:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Time</p></th>
+<th class="head"><p>Value of Money Saved at Year 0</p></th>
+<th class="head"><p>Value of Money Saved at Year 1</p></th>
+<th class="head"><p>Value of Money Saved at Year 2</p></th>
+<th class="head"><p>Value of Money Saved at Year 3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p><span class="math notranslate nohighlight">\(x\)</span></p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(x(1+r)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x\)</span></p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><span class="math notranslate nohighlight">\(x(1+r)^2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x(1+r)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x\)</span></p></td>
+<td><p>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p><span class="math notranslate nohighlight">\(x(1+r)^3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x(1+r)^2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x(1+r)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Add up the values across each column to get the total savings at the <em>beginning</em> of a given year.  This sum is reported in the following table:</p>
+<table width="100%">
+    <tr>
+        <th width="20%">
+            Time
+        </th>
+        <th width="40%">
+            Total Savings (beginning of year)
+        </th>
+        <th width="40%">
+            Total Savings (algebraically re-arranged)
+        </th>
+    </tr>
+    <tr>
+        <td>
+            $0$
+        </td>
+        <td>
+            $x$
+        </td>
+        <td>
+            $x$
+        </td>
+    </tr>
+    <tr>
+        <td>
+            $1$
+        </td>
+        <td>
+            <span style="color:blue">$x(1+r)+x$</span>
+        </td>
+        <td>
+            $x(1+r)+x$
+        </td>
+    </tr>
+    <tr>
+        <td>
+            $2$
+        </td>
+        <td>
+            <span style="color:red">$x(1+r)^2+x(1+r)+x$</span>
+        </td>
+        <td>
+            $\Big[$<span style="color:blue">$x(1+r)+x$</span>$\Big](1+r)+x$
+        </td>
+    </tr>
+    <tr>
+        <td>
+            $3$
+        </td>
+        <td>
+            $x(1+r)^3+x(1+r)^2+x(1+r)+x$
+        </td>
+        <td>
+            $\Big[$<span style="color:red">$x(1+r)^2+x(1+r)+x$</span>$\Big](1+r)+x$
+        </td>
+    </tr>
+</table>
+<p>Comparing values across columns two and three of the above table, a convenient pattern emerges.  For instance, the value in year 2, column three equals <span class="math notranslate nohighlight">\(x\)</span> plus <span class="math notranslate nohighlight">\((1+r)\)</span> times the value in year 1, column two.</p>
+<p>If we want to calculate the value of your savings acount at the beginning of year <span class="math notranslate nohighlight">\(55\)</span>, we need to tell Python to compound returns for <span class="math notranslate nohighlight">\(55\)</span> years.  The really awful way to do this is to tell Python to calculate <span class="math notranslate nohighlight">\(x(1+r)^{55}+x(1+r)^{54}+x(1+r)^{53}+...+x(1+r)^2+x(1+r)+x\)</span>.  The programmer’s way to do this is to use the pattern we pointed out in the above table, and make use of a <em>for loop</em> that operates over a range of years.</p>
+<p>If we wanted to loop over years <span class="math notranslate nohighlight">\(0\)</span> through <span class="math notranslate nohighlight">\(3\)</span>, we could tell Python to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to iterate over a list of the numbers <span class="math notranslate nohighlight">\(0\)</span> through <span class="math notranslate nohighlight">\(3\)</span>.  A <code class="docutils literal notranslate"><span class="pre">for</span></code> loop has four components to it:</p>
+<ul class="simple">
+<li><p>the word <code class="docutils literal notranslate"><span class="pre">for</span></code> : tells Python to execute a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop</p></li>
+<li><p>a variable name : this serves as a <em>loop index</em>.  You’ll see in a moment what this index does.  A common name used here is the letter <code class="docutils literal notranslate"><span class="pre">i</span></code></p></li>
+<li><p>the word <code class="docutils literal notranslate"><span class="pre">in</span></code> : tells Python that the loop index will be contained within ‘’something’’.</p></li>
+<li><p>a list : this is the ‘’something’’ that we loop over.  Every item in the list gets used once.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+</pre></div>
+</div>
+</div>
+</div>
+<p>What a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop does is tells Python to loop over the list specified (in this case, the list of numbers <span class="math notranslate nohighlight">\(0\)</span> through <span class="math notranslate nohighlight">\(4\)</span>).  For each item in that list, Python sets the loop index variable (in this case, we defined the index variable to be named <code class="docutils literal notranslate"><span class="pre">i</span></code>) equal to that value of the list and then executes every step within the for loop (all of the indented lines of code underneath the line <code class="docutils literal notranslate"><span class="pre">for</span></code>.  Here, our for loop only specifies one action: print out the value of the loop index.</p>
+<p>In our motivating example, we want Python to work over a long range of years.  In this case, years <span class="math notranslate nohighlight">\(0\)</span> through <span class="math notranslate nohighlight">\(55\)</span>.
+This would be tedious to type out explicitly into <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">...,</span> <span class="pre">54,</span> <span class="pre">55]</span></code>.  Python has a trick for this, but there’s one caveat to keep in mind.  As children, we learn to start counting with the number <span class="math notranslate nohighlight">\(1\)</span>.  Python, like most programming languages, starts counting with the number <span class="math notranslate nohighlight">\(0\)</span>.  Thus, the built-in function <code class="docutils literal notranslate"><span class="pre">range()</span></code> uses this starts-at-zero convention.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+<p>As demonstrated above, <code class="docutils literal notranslate"><span class="pre">range(5)</span></code> tells Python that the loop should iterate over numbers <span class="math notranslate nohighlight">\(0\)</span> through <span class="math notranslate nohighlight">\(4\)</span>.  Generally, we use <code class="docutils literal notranslate"><span class="pre">range(n)</span></code> to obtain numbers <span class="math notranslate nohighlight">\(0\)</span> through <span class="math notranslate nohighlight">\(n-1\)</span> (<em>not</em> <span class="math notranslate nohighlight">\(0\)</span> through <span class="math notranslate nohighlight">\(n\)</span>).  Thus, we get <span class="math notranslate nohighlight">\(n\)</span> numbers out of <code class="docutils literal notranslate"><span class="pre">range(n)</span></code>.  If we want to iterate up through year <span class="math notranslate nohighlight">\(55\)</span>, we would therefore use the statement <code class="docutils literal notranslate"><span class="pre">range(56)</span></code>.</p>
+<p>To calculate the value of your savings after <span class="math notranslate nohighlight">\(55\)</span> years, we simply have to type out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">savings</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># initially, 0 dollars in savings account</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">56</span><span class="p">):</span>
+    <span class="n">savings</span> <span class="o">=</span> <span class="n">savings</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span> <span class="c1"># each year, pre-existings savings grows by (1+r) and an additional x is added</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">savings</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2094111.7408149564
+</pre></div>
+</div>
+</div>
+</div>
+<p><span style="color:red"><strong>Concept check</strong>:</span>  Edit the following code so that the value for <code class="docutils literal notranslate"><span class="pre">my_savings</span></code> is printed out at years <code class="docutils literal notranslate"><span class="pre">10</span></code>, <code class="docutils literal notranslate"><span class="pre">20</span></code>, and <code class="docutils literal notranslate"><span class="pre">30</span></code>.  Hint: check for whether <code class="docutils literal notranslate"><span class="pre">i</span></code> is <code class="docutils literal notranslate"><span class="pre">in</span> <span class="pre">[10,</span> <span class="pre">20,</span> <span class="pre">30]</span></code>, or use the <code class="docutils literal notranslate"><span class="pre">%</span></code> operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_savings</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">35</span><span class="p">):</span>
+    <span class="n">my_savings</span> <span class="o">=</span> <span class="n">my_savings</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span>
+    <span class="c1"># edit the code here!</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">savings</span><span class="p">)</span> <span class="c1"># this will print the savings after 35 years, we want to see savings at year 10, 20, 30 as well</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2094111.7408149564
+</pre></div>
+</div>
+</div>
+</div>
+<p>For loops allow us to quickly visualize an idea.  For example, let’s return to the valuation problem from earlier in the chapter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">better_wacc</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">rE</span><span class="p">,</span> <span class="n">rD</span><span class="p">,</span> <span class="n">tC</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">rE</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;rE is not positive&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">rD</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;rD is not positive&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">tC</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;tC is not positive&#39;</span><span class="p">)</span>
+    
+    <span class="n">V</span> <span class="o">=</span> <span class="n">E</span> <span class="o">+</span> <span class="n">D</span>
+    <span class="n">cost_of_capital</span> <span class="o">=</span> <span class="n">E</span> <span class="o">/</span> <span class="n">V</span> <span class="o">*</span> <span class="n">rE</span> <span class="o">+</span> <span class="n">D</span> <span class="o">/</span> <span class="n">V</span> <span class="o">*</span> <span class="n">rD</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">tC</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cost_of_capital</span>
+
+<span class="k">def</span> <span class="nf">cost_of_equity</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">rA</span><span class="p">,</span> <span class="n">rD</span><span class="p">,</span> <span class="n">tC</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">rA</span> <span class="o">+</span> <span class="p">(</span><span class="n">rA</span><span class="o">-</span><span class="n">rD</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">tC</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">D</span><span class="o">/</span><span class="n">E</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">firm_value</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">rA</span><span class="p">,</span> <span class="n">rD</span><span class="p">,</span> <span class="n">tC</span><span class="p">,</span> <span class="n">FCF</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+    
+    <span class="n">rE</span> <span class="o">=</span> <span class="n">cost_of_equity</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="o">=</span><span class="n">D</span><span class="p">,</span> <span class="n">rA</span><span class="o">=</span><span class="n">rA</span><span class="p">,</span> <span class="n">rD</span><span class="o">=</span><span class="n">rD</span><span class="p">,</span> <span class="n">tC</span><span class="o">=</span><span class="n">tC</span><span class="p">)</span>
+    <span class="n">rW</span> <span class="o">=</span> <span class="n">better_wacc</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">rE</span><span class="p">,</span> <span class="n">rD</span><span class="p">,</span> <span class="n">tC</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">rW</span> <span class="o">&lt;</span> <span class="n">g</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;rW must be greater than g, but g=&#39;</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="s1">&#39;and rW=&#39;</span><span class="p">,</span> <span class="n">rW</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">FCF</span> <span class="o">/</span> <span class="p">(</span><span class="n">rW</span> <span class="o">-</span> <span class="n">g</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Earlier, we saw that the value of the firm changed as its leverage ratio changed.  A more complete, easier to see representation of this idea is to loop over many different debt-equity mixes and check what happens to firm value.</p>
+<p>Before jumping on the firm value example, let’s clarify the usages of <code class="docutils literal notranslate"><span class="pre">range()</span></code>.  There are three possible ways to call the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function:</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">range(n)</span></code>: gives numbers <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(n\)</span>, i.e. [0, 1, …, n]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range(k,n)</span></code>: gives numbers <span class="math notranslate nohighlight">\(k\)</span> to <span class="math notranslate nohighlight">\(n\)</span>, i.e. [k, k+1, …, n]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range(k,n,b)</span></code>: gives numbers <span class="math notranslate nohighlight">\(k\)</span> to <span class="math notranslate nohighlight">\(n\)</span>, incrementing by <span class="math notranslate nohighlight">\(b\)</span></p></li>
+</ol>
+<p>It’s perhaps easiest to understand the use cases with a few examples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+5
+6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+3
+4
+5
+6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+5
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the earlier example estimating firm value, the level of debt and equity of the firm added up to be 100.  Let’s stick to the example numbers used earlier, and consider different debt-equity mixes that add to 100.  We could iterate over possible debt levels of 0 to 90 with either a call to <code class="docutils literal notranslate"><span class="pre">range(91)</span></code> or <code class="docutils literal notranslate"><span class="pre">range(0,91)</span></code>, but that would call the <code class="docutils literal notranslate"><span class="pre">firm_value()</span></code> function 91 times!  That many calculated firm values would be hard to read.  To make things easier on ourselves, let’s try debt values of 0, 10, 20, …, 90.  We can do this with the three-input version of the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function call.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">D</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">firm_value</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="mi">100</span><span class="o">-</span><span class="n">D</span><span class="p">,</span> <span class="n">D</span><span class="o">=</span><span class="n">D</span><span class="p">,</span> <span class="n">rA</span><span class="o">=.</span><span class="mi">05</span><span class="p">,</span> <span class="n">rD</span><span class="o">=.</span><span class="mi">04</span><span class="p">,</span> <span class="n">tC</span><span class="o">=.</span><span class="mi">35</span><span class="p">,</span> <span class="n">FCF</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">g</span><span class="o">=.</span><span class="mi">01</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 50.0
+10 52.287581699346404
+20 54.7945205479452
+30 57.55395683453237
+40 60.6060606060606
+50 64.0
+60 67.79661016949152
+70 72.07207207207207
+80 76.92307692307692
+90 82.4742268041237
+</pre></div>
+</div>
+</div>
+</div>
+<p>Think carefully about why <code class="docutils literal notranslate"><span class="pre">range(0,100,10)</span></code> gives values [0, 10, 20, …, 80, 90] and not values [0, 10, 20, …, 90, 100].</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ch2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="0_intro.html" title="previous page">Introduction</a>
+    <a class='right-next' id="next-link" href="2_lists.html" title="next page">Lists</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By James Nordlund, Ph.D.<br/>
+        
+          <div class="extra_footer">
+            <p>
+  Copyright 2021.  License: CC BY-NC-ND 4.0
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
