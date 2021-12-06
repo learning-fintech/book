@@ -1,0 +1,3 @@
+### Introduction
+
+Analytics requires data.  Through this point in the course, we have largely relied on simulated data.  It’s time to work with the real thing!  We are fortunate that many data resources are accessible via an application programming interface (API).  An API is a method of requesting and receiving data from a website; this makes loading real world data into Python a breeze.  This module will discuss an overview of API utilization as well as demo a number of different, ready-made APIs in Python that will allow us to collect economic and financial data of interest.  As a capstone to this module, we’ll gather stock price data and apply it to the capital asset pricing model.

@@ -7,5 +7,3 @@ At the end of this chapter, you'll be able to:
 2. Utilize list variables to compactly store data
 3. Model a simple savings/investment decision in Python
 4. Create the beginnings of a robo-advisor to give automated investment advice with a function that is robust to user error
-
-<img src="../assets/pexels-goochie-poochie-grooming-3299905.jpg" alt="bulldog"> 

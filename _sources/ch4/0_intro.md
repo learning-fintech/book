@@ -7,5 +7,3 @@ At the end of this chapter, you'll be able to:
 2. Distinguish between correlational and causal econometric analysis
 3. Perform ordinary least squares (OLS) regression on financial data
 4. Evaluate the goodness of fit for an OLS model to determine the in-sample predictive accuracy of the statistical analysis
-
-<img src="../assets/pexels-pixabay-159692.jpg" alt="dog jumping"> 

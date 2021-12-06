@@ -1,0 +1,1222 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>American Community Survey &#8212; Financial Modeling and Analytics Using Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Regression" href="3_Regression.html" />
+    <link rel="prev" title="Application Programming Interface (API)" href="1_WhatIsAnAPI.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Financial Modeling and Analytics Using Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Financial Modeling and Analytics
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python Preliminaries - Principles and Preferred Practices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/1_variablesAndData.html">
+   Variables and Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/2_math.html">
+   Math with Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/3_strings.html">
+   Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/3b_strings.html">
+   More Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4_functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4b_functions.html">
+   More Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4c_functions.html">
+   Combine Multiple Functions for Maximal Efficiency
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Learning to Love the Logic of Loops and Lists
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/1_loops.html">
+   Loops and Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/2_lists.html">
+   Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/3_list_comprehension.html">
+   List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/4_lifetime_savings.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   Loops and Delayed Savings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/5_robo_advising.html">
+   Robo-Advising
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Dictionaries, DataFrames, Descriptives, and Diagnostics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/1_dictionaries.html">
+   Dictionaries and DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/2_robo_dictionary.html">
+   Dictionaries and the Robo-Advisor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/3_dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/4_slicing_dataframes.html">
+   Selecting Pieces of DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/5_dates_and_dataframes.html">
+   Dates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/6_descriptives.html">
+   Descriptive Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/7_simulation.html">
+   Simulating Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/8_robo_sim.html">
+   Simulating Returns for the Robo-Advisor
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Can We Craft Causal Conclusions?
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/1_regression_data.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/2_causal_diagrams.html">
+   Causal Graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/3_regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/4_regression_details.html">
+   Regression Details
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Running Regressions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_WhatIsAnAPI.html">
+   Application Programming Interface (API)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   American Community Survey
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_Regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4_PandasDataReader.html">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas_datareader
+    </span>
+   </code>
+   Module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5_stock_prices.html">
+   Stock Prices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6_capm.html">
+   CAPM
+   <span class="math notranslate nohighlight">
+    \(\beta\)
+   </span>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7_capm.html">
+   Applied CAPM
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ch5/2_ACS_Data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/learning-fintech/book/gh-pages?urlpath=tree/ch5/2_ACS_Data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   American Community Survey
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zillow-home-values">
+   Zillow Home Values
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="american-community-survey">
+<h1>American Community Survey<a class="headerlink" href="#american-community-survey" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="https://www.census.gov/programs-surveys/acs">American Community Survey</a>(ACS) is the largest survey conducted by the U.S. Census Bureau.  It collects basic demographic information about people living across the United States.</p>
+<p>The survey is conducted every year, and, due to processing time, releases with a lag.  For instance, the 2018 survey data is released in the latter part of 2019.  The ACS data is relased not only in one-year estimates (e.g. 2018 survey data) but also in five-year estimates (e.g. 2014-2018 survey data).  The one-year estimates are, naturally, more recent.  However, five-year estimates may be necessary in some applications.  The Census Bureau does not release survey information for small populations, due to anonymity concerns, every year.  Rather, some information is available exclusively in the five-year survey data (which averages over a five year period).</p>
+<p>A brief overview of the data available through the ACS is available <a class="reference external" href="https://www.census.gov/acs/www/data/data-tables-and-tools/">here</a>.  Note that the ACS data includes things like age, marital status, income, employment status, and educational attainment.</p>
+<p>The full list of ACS data is available <a class="reference external" href="https://api.census.gov/data/2018/acs/acs1/profile/variables/">here</a>.</p>
+<p>Register for an API key with the U.S. Census Bureau <a class="reference external" href="https://api.census.gov/data/key_signup.html">here</a>.  This step is <strong>required</strong> to continue with the lecture notes!</p>
+<p>To keep my key secret, I’ve pickled the string that stores it, and will re-load it here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../pickle_jar/census.p&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">api_key</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">api_key</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6efdf
+</pre></div>
+</div>
+</div>
+</div>
+<p>The formula to get data from the ACS is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;https://api.census.gov/data/&#39;</span>
+<span class="o">+</span> <span class="o">&lt;</span><span class="n">year</span><span class="o">&gt;</span>
+<span class="o">+</span> <span class="s1">&#39;/acs/acs1?get=NAME,&#39;</span>
+<span class="o">+</span> <span class="o">&lt;</span><span class="n">variable</span> <span class="n">name</span><span class="o">&gt;</span>
+<span class="o">+</span> <span class="s1">&#39;&amp;for=&#39;</span>
+<span class="o">+</span> <span class="o">&lt;</span><span class="n">geography</span><span class="o">&gt;</span>
+<span class="o">+</span> <span class="s1">&#39;:*&amp;key=&#39;</span>
+<span class="o">+</span> <span class="o">&lt;</span><span class="n">API</span> <span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>For instance, to get median household income (which has <code class="docutils literal notranslate"><span class="pre">&lt;variable</span> <span class="pre">name&gt;</span> <span class="pre">=</span> <span class="pre">B19013_001E</span></code>) for <code class="docutils literal notranslate"><span class="pre">&lt;year&gt;</span> <span class="pre">=</span> <span class="pre">2010</span></code> over the entire U.S. (<code class="docutils literal notranslate"><span class="pre">&lt;geography&gt;</span> <span class="pre">=</span> <span class="pre">us</span></code>), we would use the string</p>
+<p><code class="docutils literal notranslate"><span class="pre">'https://api.census.gov/data/'</span> <span class="pre">+</span> <span class="pre">'2010'</span> <span class="pre">+</span> <span class="pre">'/acs/acs1?get=NAME,'</span> <span class="pre">+</span> <span class="pre">'B19013_001E'</span> <span class="pre">+</span> <span class="pre">'&amp;for='</span> <span class="pre">+</span> <span class="pre">'us'</span> <span class="pre">+</span> <span class="pre">':*&amp;key='</span> <span class="pre">+</span> <span class="pre">api_key</span></code></p>
+<p>as our URL.  An example request is shown below:</p>
+<p><strong>NOTE</strong>: Starting Fall 2021, we began to encounter issues with students receiving API keys from the Census Bureau that do not appear to work correctly.  If the code below does not work for you, please replace it with the following Python code:</p>
+<blockquote>
+<div><p>import requests <br/>
+r = requests.get(‘<a class="reference external" href="https://raw.githubusercontent.com/learning-fintech/data/main/census/census1.json">https://raw.githubusercontent.com/learning-fintech/data/main/census/census1.json</a>’).json() <br/>
+print(r)</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.census.gov/data/2018/acs/acs1?get=NAME,B19013_001E&amp;for=us:*&amp;key=&#39;</span> <span class="o">+</span> <span class="n">api_key</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;NAME&#39;, &#39;B19013_001E&#39;, &#39;us&#39;], [&#39;United States&#39;, &#39;61937&#39;, &#39;1&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Likewise, to get data for <em>every</em> county in the country, we would replace <code class="docutils literal notranslate"><span class="pre">us</span></code> with <code class="docutils literal notranslate"><span class="pre">county</span></code> following the <code class="docutils literal notranslate"><span class="pre">for=</span></code> piece of the string.  This will return data on many counties.  Instead of printing them all, below, we’ve printed just a sample, as well as the total number of counties for which median household income data is available via ACS.</p>
+<p><strong>NOTE</strong>: Starting Fall 2021, we began to encounter issues with students receiving API keys from the Census Bureau that do not appear to work correctly.  If the code below does not work for you, please replace it with the following Python code:</p>
+<blockquote>
+<div><p>import requests <br/>
+r = requests.get(‘<a class="reference external" href="https://raw.githubusercontent.com/learning-fintech/data/main/census/census2.json">https://raw.githubusercontent.com/learning-fintech/data/main/census/census2.json</a>’).json() <br/>
+print(r)</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.census.gov/data/2018/acs/acs1?get=NAME,B19013_001E&amp;for=county:*&amp;key=&#39;</span> <span class="o">+</span> <span class="n">api_key</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;NAME&#39;, &#39;B19013_001E&#39;, &#39;state&#39;, &#39;county&#39;], [&#39;Baldwin County, Alabama&#39;, &#39;56813&#39;, &#39;01&#39;, &#39;003&#39;], [&#39;Calhoun County, Alabama&#39;, &#39;45818&#39;, &#39;01&#39;, &#39;015&#39;], [&#39;Cullman County, Alabama&#39;, &#39;44612&#39;, &#39;01&#39;, &#39;043&#39;], [&#39;DeKalb County, Alabama&#39;, &#39;36998&#39;, &#39;01&#39;, &#39;049&#39;], [&#39;Elmore County, Alabama&#39;, &#39;60796&#39;, &#39;01&#39;, &#39;051&#39;], [&#39;Etowah County, Alabama&#39;, &#39;45868&#39;, &#39;01&#39;, &#39;055&#39;], [&#39;Houston County, Alabama&#39;, &#39;48105&#39;, &#39;01&#39;, &#39;069&#39;], [&#39;Jefferson County, Alabama&#39;, &#39;55206&#39;, &#39;01&#39;, &#39;073&#39;], [&#39;Lauderdale County, Alabama&#39;, &#39;49014&#39;, &#39;01&#39;, &#39;077&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the first item in this list is:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;NAME&#39;, &#39;B19013_001E&#39;, &#39;state&#39;, &#39;county&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>which is simply a set of headers.  That is, for each additional item in the list, the data in position 0 is the county name and the data in position 1 corresponds to the value for the variable <code class="docutils literal notranslate"><span class="pre">B19013_001E</span></code>.  The numbers in positions 2 and 3 are the county’s FIPS code.  States have 2-digit FIPS codes, and counties have 3-digit FIPS codes.  If we put the state code and county code together to a 5-digit number (state code then county code), we have a unique identifier for the county.  This FIPS code is used by many different data providers.</p>
+<p>Recall that we can remove an element from a list with the <code class="docutils literal notranslate"><span class="pre">.pop()</span></code> function.  For instance, let’s remove the first element of our requested ACS data (the set of headers).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">headers</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># delete item 0 from the list and simultaneously store it in the variable &quot;headers&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do not run the above line of code multiple times!  Python will continue popping out elements of your list.</p>
+<p>The value for <code class="docutils literal notranslate"><span class="pre">headers</span></code> is thus:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">headers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;NAME&#39;, &#39;B19013_001E&#39;, &#39;state&#39;, &#39;county&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>as expected.  Now, the requested ACS data no longer has that element.  Rather, what is left is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;Baldwin County, Alabama&#39;, &#39;56813&#39;, &#39;01&#39;, &#39;003&#39;], [&#39;Calhoun County, Alabama&#39;, &#39;45818&#39;, &#39;01&#39;, &#39;015&#39;], [&#39;Cullman County, Alabama&#39;, &#39;44612&#39;, &#39;01&#39;, &#39;043&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>simply data.  This is useful, because we can not store all of the data we have in a DataFrame.  The command to do this is <code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code>.  This function takes two arguments.  First, Python expects to receive a list of lists.  This list of lists should correspond to the data that we want to store.  The list of list is a list of rows of data, where each row may be a list of multiple values (multiple columns).  The second argument is a list of column names.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">census</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">census</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NAME</th>
+      <th>B19013_001E</th>
+      <th>state</th>
+      <th>county</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Baldwin County, Alabama</td>
+      <td>56813</td>
+      <td>01</td>
+      <td>003</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Calhoun County, Alabama</td>
+      <td>45818</td>
+      <td>01</td>
+      <td>015</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Cullman County, Alabama</td>
+      <td>44612</td>
+      <td>01</td>
+      <td>043</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>DeKalb County, Alabama</td>
+      <td>36998</td>
+      <td>01</td>
+      <td>049</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Elmore County, Alabama</td>
+      <td>60796</td>
+      <td>01</td>
+      <td>051</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Note that the <strong>state</strong> and <strong>county</strong> variables display with leading zeroes.  That is, a number <code class="docutils literal notranslate"><span class="pre">1</span></code> is printed out at <code class="docutils literal notranslate"><span class="pre">01</span></code>.  This is a telltale sign that these columns are <em>strings</em>.</p>
+<p>We will want these columns to be integers.  The reason why will become apparent once we load another dataset.  However, it’s convenient for us to convert the data type now.  Remember that we could do <code class="docutils literal notranslate"><span class="pre">int('01')</span></code> to convert one string to one integer.  In <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, we can use the <code class="docutils literal notranslate"><span class="pre">.astype()</span></code> function on a column of string data to convert all rows of that column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">census</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">census</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">census</span><span class="p">[</span><span class="s1">&#39;county&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">census</span><span class="p">[</span><span class="s1">&#39;county&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can check the variable types formally with the <code class="docutils literal notranslate"><span class="pre">.dtypes</span></code> command.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">census</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NAME           object
+B19013_001E    object
+state           int64
+county          int64
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Oh no!  It looks like <code class="docutils literal notranslate"><span class="pre">B19013_001E</span></code> (the Census variable for median household income) is also a string (which <code class="docutils literal notranslate"><span class="pre">pandas</span></code> lumps into a group called <code class="docutils literal notranslate"><span class="pre">object</span></code>).  So, we’ll want to convert median household income to an integer as well.  This will allow us to use it in a regression later.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">census</span><span class="p">[</span><span class="s1">&#39;B19013_001E&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">census</span><span class="p">[</span><span class="s1">&#39;B19013_001E&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="zillow-home-values">
+<h1>Zillow Home Values<a class="headerlink" href="#zillow-home-values" title="Permalink to this headline">¶</a></h1>
+<p>County median incomes give a sense of the economic well-being of a geographic area.  Suppose that our interest is in how home prices (for most households, the most valuable asset that the household owns), correlates with income.</p>
+<p>Housing data is available from Zillow <a class="reference external" href="https://www.zillow.com/research/data/">here</a>.</p>
+<p>The URL for data on all home prices in a county (single-family residential and condos) is something like <code class="docutils literal notranslate"><span class="pre">'https://files.zillowstatic.com/research/public_csvs/zhvi/County_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv'</span></code>.  You can find these links from the page linked above.  Pandas can read online csv files directly in to Python.  The precise link from Zillow changes as they update their data, and old links can die over time.  To avoid link rot, a copy of the Zillow data to use is made available at:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://raw.githubusercontent.com/learning-fintech/data/main/zhvi/County_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">https://raw.githubusercontent.com/learning-fintech/data/main/zhvi/County_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv</a></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zhvi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/learning-fintech/data/main/zhvi/County_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">.shape</span></code> property of a Pandas DataFrame reports the numbers of rows and columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zhvi</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2822, 269)
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are a lot of columns on this file!  Recall that the <code class="docutils literal notranslate"><span class="pre">.columns</span></code> property of a DataFrame returns a list of columns.  Recall too that we can subset a list named <code class="docutils literal notranslate"><span class="pre">x</span></code> to items <code class="docutils literal notranslate"><span class="pre">m</span></code> through <code class="docutils literal notranslate"><span class="pre">n</span></code> via <code class="docutils literal notranslate"><span class="pre">x[m:n]</span></code>.  Thus, print out only the first 20 columns of the DataFrame below (to get a sense of what’s included on this DataFrame).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zhvi</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;RegionID&#39;, &#39;SizeRank&#39;, &#39;RegionName&#39;, &#39;RegionType&#39;, &#39;StateName&#39;,
+       &#39;State&#39;, &#39;Metro&#39;, &#39;StateCodeFIPS&#39;, &#39;MunicipalCodeFIPS&#39;, &#39;2000-01-31&#39;,
+       &#39;2000-02-29&#39;, &#39;2000-03-31&#39;, &#39;2000-04-30&#39;, &#39;2000-05-31&#39;, &#39;2000-06-30&#39;,
+       &#39;2000-07-31&#39;, &#39;2000-08-31&#39;, &#39;2000-09-30&#39;, &#39;2000-10-31&#39;, &#39;2000-11-30&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Likewise, the <em>last</em> <code class="docutils literal notranslate"><span class="pre">n</span></code> items of list <code class="docutils literal notranslate"><span class="pre">x</span></code> are accessible via <code class="docutils literal notranslate"><span class="pre">x[-n:]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zhvi</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;2020-01-31&#39;, &#39;2020-02-29&#39;, &#39;2020-03-31&#39;, &#39;2020-04-30&#39;, &#39;2020-05-31&#39;,
+       &#39;2020-06-30&#39;, &#39;2020-07-31&#39;, &#39;2020-08-31&#39;, &#39;2020-09-30&#39;, &#39;2020-10-31&#39;,
+       &#39;2020-11-30&#39;, &#39;2020-12-31&#39;, &#39;2021-01-31&#39;, &#39;2021-02-28&#39;, &#39;2021-03-31&#39;,
+       &#39;2021-04-30&#39;, &#39;2021-05-31&#39;, &#39;2021-06-30&#39;, &#39;2021-07-31&#39;, &#39;2021-08-31&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Given what we observe about the data, define a list of column names to keep.  All other columns outside of this list will be removed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">keep_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">zhvi</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">9</span><span class="p">]]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;2018-12-31&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">keep_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;RegionID&#39;, &#39;SizeRank&#39;, &#39;RegionName&#39;, &#39;RegionType&#39;, &#39;StateName&#39;, &#39;State&#39;, &#39;Metro&#39;, &#39;StateCodeFIPS&#39;, &#39;MunicipalCodeFIPS&#39;, &#39;2018-12-31&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tell Python to only keep those columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zhvi</span> <span class="o">=</span> <span class="n">zhvi</span><span class="p">[</span><span class="n">keep_list</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To inspect the data, print out a head.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zhvi</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>RegionID</th>
+      <th>SizeRank</th>
+      <th>RegionName</th>
+      <th>RegionType</th>
+      <th>StateName</th>
+      <th>State</th>
+      <th>Metro</th>
+      <th>StateCodeFIPS</th>
+      <th>MunicipalCodeFIPS</th>
+      <th>2018-12-31</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3101</td>
+      <td>0</td>
+      <td>Los Angeles County</td>
+      <td>County</td>
+      <td>CA</td>
+      <td>CA</td>
+      <td>Los Angeles-Long Beach-Anaheim</td>
+      <td>6</td>
+      <td>37</td>
+      <td>633036.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>139</td>
+      <td>1</td>
+      <td>Cook County</td>
+      <td>County</td>
+      <td>IL</td>
+      <td>IL</td>
+      <td>Chicago-Naperville-Elgin</td>
+      <td>17</td>
+      <td>31</td>
+      <td>256785.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1090</td>
+      <td>2</td>
+      <td>Harris County</td>
+      <td>County</td>
+      <td>TX</td>
+      <td>TX</td>
+      <td>Houston-The Woodlands-Sugar Land</td>
+      <td>48</td>
+      <td>201</td>
+      <td>197363.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2402</td>
+      <td>3</td>
+      <td>Maricopa County</td>
+      <td>County</td>
+      <td>AZ</td>
+      <td>AZ</td>
+      <td>Phoenix-Mesa-Scottsdale</td>
+      <td>4</td>
+      <td>13</td>
+      <td>273091.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2841</td>
+      <td>4</td>
+      <td>San Diego County</td>
+      <td>County</td>
+      <td>CA</td>
+      <td>CA</td>
+      <td>San Diego-Carlsbad</td>
+      <td>6</td>
+      <td>73</td>
+      <td>593304.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We will combine datasets using state and county codes.  Note that in the Zillow data, state and county codes were imported as numbers.  We can check that below.  The columns of interest are <code class="docutils literal notranslate"><span class="pre">StateCodeFIPS</span></code> and <code class="docutils literal notranslate"><span class="pre">MunicipalCodeFIPS</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zhvi</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RegionID               int64
+SizeRank               int64
+RegionName            object
+RegionType            object
+StateName             object
+State                 object
+Metro                 object
+StateCodeFIPS          int64
+MunicipalCodeFIPS      int64
+2018-12-31           float64
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can merge.  The format for merging <code class="docutils literal notranslate"><span class="pre">df1</span></code> and <code class="docutils literal notranslate"><span class="pre">df2</span></code> is to use <code class="docutils literal notranslate"><span class="pre">df1.merge(df2,</span> <span class="pre">left_on=,</span> <span class="pre">right_on=)</span></code>.  The <code class="docutils literal notranslate"><span class="pre">left_on</span></code> and <code class="docutils literal notranslate"><span class="pre">right_on</span></code> specify variables on the left (<code class="docutils literal notranslate"><span class="pre">df1)</span></code> and right (<code class="docutils literal notranslate"><span class="pre">df2</span></code>) datasets that should link the datasets together.  Note that <code class="docutils literal notranslate"><span class="pre">df1</span></code> is the left dataset because it appears before <code class="docutils literal notranslate"><span class="pre">.merge</span></code>, whereas <code class="docutils literal notranslate"><span class="pre">df2</span></code> is the right data because it appears after <code class="docutils literal notranslate"><span class="pre">.merge</span></code>.  It is also possible to use <code class="docutils literal notranslate"><span class="pre">df2.merge(df1,</span> <span class="pre">left_on=,</span> <span class="pre">right_on=)</span></code>.  In this scenario, the lists passed to <code class="docutils literal notranslate"><span class="pre">left_on</span></code> and <code class="docutils literal notranslate"><span class="pre">right_on</span></code> would flip from the earlier usage (since now <code class="docutils literal notranslate"><span class="pre">df2</span></code> is the left dataset).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">zhvi</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">census</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;StateCodeFIPS&#39;</span><span class="p">,</span> <span class="s1">&#39;MunicipalCodeFIPS&#39;</span><span class="p">],</span> <span class="n">right_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">,</span> <span class="s1">&#39;county&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print the head to see a snapshot of the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>RegionID</th>
+      <th>SizeRank</th>
+      <th>RegionName</th>
+      <th>RegionType</th>
+      <th>StateName</th>
+      <th>State</th>
+      <th>Metro</th>
+      <th>StateCodeFIPS</th>
+      <th>MunicipalCodeFIPS</th>
+      <th>2018-12-31</th>
+      <th>NAME</th>
+      <th>B19013_001E</th>
+      <th>state</th>
+      <th>county</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3101</td>
+      <td>0</td>
+      <td>Los Angeles County</td>
+      <td>County</td>
+      <td>CA</td>
+      <td>CA</td>
+      <td>Los Angeles-Long Beach-Anaheim</td>
+      <td>6</td>
+      <td>37</td>
+      <td>633036.0</td>
+      <td>Los Angeles County, California</td>
+      <td>68093</td>
+      <td>6</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>139</td>
+      <td>1</td>
+      <td>Cook County</td>
+      <td>County</td>
+      <td>IL</td>
+      <td>IL</td>
+      <td>Chicago-Naperville-Elgin</td>
+      <td>17</td>
+      <td>31</td>
+      <td>256785.0</td>
+      <td>Cook County, Illinois</td>
+      <td>63353</td>
+      <td>17</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1090</td>
+      <td>2</td>
+      <td>Harris County</td>
+      <td>County</td>
+      <td>TX</td>
+      <td>TX</td>
+      <td>Houston-The Woodlands-Sugar Land</td>
+      <td>48</td>
+      <td>201</td>
+      <td>197363.0</td>
+      <td>Harris County, Texas</td>
+      <td>60232</td>
+      <td>48</td>
+      <td>201</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2402</td>
+      <td>3</td>
+      <td>Maricopa County</td>
+      <td>County</td>
+      <td>AZ</td>
+      <td>AZ</td>
+      <td>Phoenix-Mesa-Scottsdale</td>
+      <td>4</td>
+      <td>13</td>
+      <td>273091.0</td>
+      <td>Maricopa County, Arizona</td>
+      <td>65252</td>
+      <td>4</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2841</td>
+      <td>4</td>
+      <td>San Diego County</td>
+      <td>County</td>
+      <td>CA</td>
+      <td>CA</td>
+      <td>San Diego-Carlsbad</td>
+      <td>6</td>
+      <td>73</td>
+      <td>593304.0</td>
+      <td>San Diego County, California</td>
+      <td>79079</td>
+      <td>6</td>
+      <td>73</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>This merged dataset has both county median income and an index of home values in the area.</p>
+<p>We want to study median income and hope prices, but, let’s be honest, the variable name <code class="docutils literal notranslate"><span class="pre">B19013_001E</span></code> is awful.  It’s tedious to type out, and it’s not particularly easy to remember.  The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> module has a tool to rename columns, so let’s use that.  The syntax is <code class="docutils literal notranslate"><span class="pre">&lt;dataframe</span> <span class="pre">name&gt;.rename(columns={&lt;old</span> <span class="pre">name&gt;:</span> <span class="pre">&lt;new</span> <span class="pre">name&gt;})</span></code>.  This does not update the dataset to use the new column name.  Rather, the <code class="docutils literal notranslate"><span class="pre">.rename()</span></code> function returns a copy of the dataset with the new name.  So, you need to do</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">dataframe</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">dataframe</span> <span class="n">name</span><span class="o">&gt;.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="n">old</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">new</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>to have the change take effect.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;B19013_001E&#39;</span><span class="p">:</span> <span class="s1">&#39;med_inc&#39;</span><span class="p">,</span> <span class="s1">&#39;2018-12-31&#39;</span><span class="p">:</span> <span class="s1">&#39;home_value&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Are income and home prices correlated?  We can quickly visualize the question with <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;med_inc&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;home_value&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f7790d79e80&gt;
+</pre></div>
+</div>
+<img alt="../_images/2_ACS_Data_48_1.png" src="../_images/2_ACS_Data_48_1.png" />
+</div>
+</div>
+<p>There do appear to be some outliers here.  To check, try a boxplot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;home_value&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;home_value&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/2_ACS_Data_50_1.png" src="../_images/2_ACS_Data_50_1.png" />
+</div>
+</div>
+<p>Additionally, print out a description of the home value index data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;home_value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    8.180000e+02
+mean     2.349062e+05
+std      1.489023e+05
+min      5.683700e+04
+25%      1.465330e+05
+50%      1.970455e+05
+75%      2.733452e+05
+max      1.431949e+06
+Name: home_value, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>One method of removing outliers is to ignore (i.e. delete) the data that is “far out” on the boxplot (i.e., well beyond the whiskers).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">numpy</span></code> module has a <code class="docutils literal notranslate"><span class="pre">nanquantile()</span></code> function to retrieve the 25th and 75th percentiles, as reported above in the summary statistics.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">quantiles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanquantile</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;home_value&#39;</span><span class="p">],</span> <span class="n">q</span><span class="o">=</span><span class="p">[</span><span class="o">.</span><span class="mi">25</span><span class="p">,</span> <span class="o">.</span><span class="mi">75</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">quantiles</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[146533.   273345.25]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The interquartile range (IQR) is defined as the difference between the 75th and 25th percentiles of data.  One reasonable way to remove outliers is to eliminate observations that exceed the 75th percentile by more than 1.5*IQR or are less than the 25th percentile by more than 1.5*IQR.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iqr</span> <span class="o">=</span> <span class="n">quantiles</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">quantiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">minidf</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;home_value&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">quantiles</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mf">1.5</span><span class="o">*</span><span class="n">iqr</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;home_value&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">quantiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mf">1.5</span><span class="o">*</span><span class="n">iqr</span><span class="p">)</span> <span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;med_inc&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;home_value&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">minidf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f778b6c0f40&gt;
+</pre></div>
+</div>
+<img alt="../_images/2_ACS_Data_56_1.png" src="../_images/2_ACS_Data_56_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+
+<span class="n">reg</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">&#39;home_value ~ med_inc&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">minidf</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">cov_type</span><span class="o">=</span><span class="s1">&#39;HC3&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             home_value   R-squared:                       0.501
+Model:                            OLS   Adj. R-squared:                  0.500
+Method:                 Least Squares   F-statistic:                     898.7
+Date:                Mon, 06 Dec 2021   Prob (F-statistic):          2.71e-131
+Time:                        12:06:12   Log-Likelihood:                -9537.5
+No. Observations:                 769   AIC:                         1.908e+04
+Df Residuals:                     767   BIC:                         1.909e+04
+Df Model:                           1                                         
+Covariance Type:                  HC3                                         
+==============================================================================
+                 coef    std err          z      P&gt;|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept  -3.785e+04   8162.170     -4.637      0.000   -5.38e+04   -2.18e+04
+med_inc        4.0613      0.135     29.978      0.000       3.796       4.327
+==============================================================================
+Omnibus:                      180.637   Durbin-Watson:                   1.939
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              365.267
+Skew:                           1.323   Prob(JB):                     4.82e-80
+Kurtosis:                       5.097   Cond. No.                     2.65e+05
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+[2] The condition number is large, 2.65e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ch5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="1_WhatIsAnAPI.html" title="previous page">Application Programming Interface (API)</a>
+    <a class='right-next' id="next-link" href="3_Regression.html" title="next page">Regression</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By James Nordlund, Ph.D.<br/>
+        
+          <div class="extra_footer">
+            <p>
+  Copyright 2021.  License: CC BY-NC-ND 4.0
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

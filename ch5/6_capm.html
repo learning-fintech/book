@@ -1,0 +1,688 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CAPM \(\beta\) &#8212; Financial Modeling and Analytics Using Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Applied CAPM" href="7_capm.html" />
+    <link rel="prev" title="Stock Prices" href="5_stock_prices.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Financial Modeling and Analytics Using Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Financial Modeling and Analytics
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python Preliminaries - Principles and Preferred Practices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/1_variablesAndData.html">
+   Variables and Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/2_math.html">
+   Math with Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/3_strings.html">
+   Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/3b_strings.html">
+   More Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4_functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4b_functions.html">
+   More Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4c_functions.html">
+   Combine Multiple Functions for Maximal Efficiency
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Learning to Love the Logic of Loops and Lists
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/1_loops.html">
+   Loops and Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/2_lists.html">
+   Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/3_list_comprehension.html">
+   List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/4_lifetime_savings.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   Loops and Delayed Savings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/5_robo_advising.html">
+   Robo-Advising
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Dictionaries, DataFrames, Descriptives, and Diagnostics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/1_dictionaries.html">
+   Dictionaries and DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/2_robo_dictionary.html">
+   Dictionaries and the Robo-Advisor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/3_dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/4_slicing_dataframes.html">
+   Selecting Pieces of DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/5_dates_and_dataframes.html">
+   Dates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/6_descriptives.html">
+   Descriptive Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/7_simulation.html">
+   Simulating Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/8_robo_sim.html">
+   Simulating Returns for the Robo-Advisor
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Can We Craft Causal Conclusions?
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/1_regression_data.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/2_causal_diagrams.html">
+   Causal Graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/3_regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/4_regression_details.html">
+   Regression Details
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Running Regressions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_WhatIsAnAPI.html">
+   Application Programming Interface (API)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_ACS_Data.html">
+   American Community Survey
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_Regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4_PandasDataReader.html">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas_datareader
+    </span>
+   </code>
+   Module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5_stock_prices.html">
+   Stock Prices
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   CAPM
+   <span class="math notranslate nohighlight">
+    \(\beta\)
+   </span>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7_capm.html">
+   Applied CAPM
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ch5/6_capm.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/learning-fintech/book/gh-pages?urlpath=tree/ch5/6_capm.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="capm-beta">
+<h1>CAPM <span class="math notranslate nohighlight">\(\beta\)</span><a class="headerlink" href="#capm-beta" title="Permalink to this headline">¶</a></h1>
+<p>Regression models a line that might look something like:</p>
+<div class="math notranslate nohighlight">
+\[
+y = c + \beta x + u.
+\]</div>
+<p>Recall that the CAPM equation states:</p>
+<div class="math notranslate nohighlight">
+\[
+R_{i,t} = R_{f,t} + \beta_i (R_{m,t} - R_{f,t})
+\]</div>
+<p>which we can re-arrange to form:</p>
+<div class="math notranslate nohighlight">
+\[
+R_{i,t} - R_{f,t} = \beta_i (R_{m,t} - R_{f,t}).
+\]</div>
+<p>Note the similarities between this equation and the equation for a straight line.  We can use linear regression to fit the re-arranged CAPM equation by writing <span class="math notranslate nohighlight">\(y=R_{i,t}-R_{f,t}\)</span>, <span class="math notranslate nohighlight">\(c=0\)</span>, and <span class="math notranslate nohighlight">\(x=R_{m,t}-R_{f,t}\)</span>.  The CAPM formula tells us that the <em>excess</em> return on the stock, <span class="math notranslate nohighlight">\(y\)</span>, is equal to the stock’s <span class="math notranslate nohighlight">\(\beta\)</span> times the market risk premium, <span class="math notranslate nohighlight">\(x\)</span>, on average.  There are random deviations from this average relationship between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, and we model this with the error term <span class="math notranslate nohighlight">\(u\)</span>.</p>
+<p>The CAPM equation is based on a theoretical relationship between a stock’s excess return and the market risk premium.  Per the equation derived by the theory, there is no intercept (equivalently: the intercept is zero).</p>
+<p>Below, we will simulate stock return data according to CAPM.  Thus, no intercept will be included in the simulated data.  After, we will run a regression in <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> (which will include an intercept term), and we will see that including an intercept in the regression is actually quite harmless.</p>
+<p>Assume that the market return has an average annual return of <span class="math notranslate nohighlight">\(8\%\)</span> and annual volatility of <span class="math notranslate nohighlight">\(10\%\)</span>, the risk free rate is constant at <span class="math notranslate nohighlight">\(0.03\)</span>, and let <span class="math notranslate nohighlight">\(\beta=1.2\)</span>.  Simulate one year of returns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">annual_mean</span> <span class="o">=</span> <span class="o">.</span><span class="mi">08</span>
+<span class="n">annual_vol</span> <span class="o">=</span> <span class="o">.</span><span class="mi">1</span>
+<span class="n">annual_rf</span> <span class="o">=</span> <span class="o">.</span><span class="mi">03</span>
+
+<span class="n">mean</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">annual_mean</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">252</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">vol</span> <span class="o">=</span> <span class="n">annual_vol</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">252</span><span class="p">)</span>
+<span class="n">rf</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">annual_rf</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">252</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="n">mkt_ret</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">vol</span><span class="p">,</span> <span class="mi">252</span><span class="p">)</span>
+<span class="n">mrp</span> <span class="o">=</span> <span class="n">mkt_ret</span> <span class="o">-</span> <span class="n">rf</span>
+
+<span class="n">beta</span> <span class="o">=</span> <span class="mf">1.2</span>
+<span class="n">stk_ret</span> <span class="o">=</span> <span class="n">rf</span> <span class="o">+</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">mrp</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">005</span><span class="p">,</span> <span class="mi">252</span><span class="p">)</span>
+<span class="n">excess_ret</span> <span class="o">=</span> <span class="n">stk_ret</span> <span class="o">-</span> <span class="n">rf</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plot the distribution of returns to see what daily returns for the stock look like.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">stk_ret</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fe6e488ce80&gt;
+</pre></div>
+</div>
+<img alt="../_images/6_capm_3_1.png" src="../_images/6_capm_3_1.png" />
+</div>
+</div>
+<p>By cumulating the return over the year, we can back out a stock price history for the simulated data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumprod</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">stk_ret</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">252</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">price</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/6_capm_5_1.png" src="../_images/6_capm_5_1.png" />
+</div>
+</div>
+<p>To run regression on the data, we’ll want to package the return series as a DataFrame.  The <span class="math notranslate nohighlight">\(y\)</span> variable is the firm’s excess return and the <span class="math notranslate nohighlight">\(x\)</span> variable is the market risk premium.  So, store these two series as columns in a DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;excess_ret&#39;</span><span class="p">:</span> <span class="n">excess_ret</span><span class="p">,</span> <span class="s1">&#39;mrp&#39;</span><span class="p">:</span> <span class="n">mrp</span><span class="p">})</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>excess_ret</th>
+      <th>mrp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.014271</td>
+      <td>0.011301</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.001654</td>
+      <td>0.002709</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.011082</td>
+      <td>0.006354</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.020639</td>
+      <td>0.014304</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.010715</td>
+      <td>0.011953</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Run the regression via <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>.  By default, an intercept term is included, even though the CAPM equation hypothesizes that the intercept is equal to zero.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+
+<span class="n">mod</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;excess_ret ~ mrp&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mod</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             excess_ret   R-squared:                       0.689
+Model:                            OLS   Adj. R-squared:                  0.688
+Method:                 Least Squares   F-statistic:                     554.3
+Date:                Mon, 06 Dec 2021   Prob (F-statistic):           2.24e-65
+Time:                        12:11:42   Log-Likelihood:                 978.92
+No. Observations:                 252   AIC:                            -1954.
+Df Residuals:                     250   BIC:                            -1947.
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept     -0.0004      0.000     -1.198      0.232      -0.001       0.000
+mrp            1.1835      0.050     23.543      0.000       1.085       1.283
+==============================================================================
+Omnibus:                        0.801   Durbin-Watson:                   2.095
+Prob(Omnibus):                  0.670   Jarque-Bera (JB):                0.555
+Skew:                          -0.092   Prob(JB):                        0.758
+Kurtosis:                       3.139   Cond. No.                         160.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because we simulated data with a zero-intercept, the regression estimates the intercept to be incredibly small.</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">statsmodels.formula.api</span></code> syntax for regression, the trick to estimating a model without an intercept is to add <code class="docutils literal notranslate"><span class="pre">-1</span></code> as a term to the regression.  This tells <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> to remove the intercept term.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mod2</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;excess_ret ~ mrp - 1&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mod2</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:             excess_ret   R-squared (uncentered):                   0.687
+Model:                            OLS   Adj. R-squared (uncentered):              0.686
+Method:                 Least Squares   F-statistic:                              551.9
+Date:                Mon, 06 Dec 2021   Prob (F-statistic):                    2.54e-65
+Time:                        12:11:42   Log-Likelihood:                          978.20
+No. Observations:                 252   AIC:                                     -1954.
+Df Residuals:                     251   BIC:                                     -1951.
+Df Model:                           1                                                  
+Covariance Type:            nonrobust                                                  
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+mrp            1.1798      0.050     23.493      0.000       1.081       1.279
+==============================================================================
+Omnibus:                        0.790   Durbin-Watson:                   2.083
+Prob(Omnibus):                  0.674   Jarque-Bera (JB):                0.548
+Skew:                          -0.092   Prob(JB):                        0.760
+Kurtosis:                       3.135   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <span class="math notranslate nohighlight">\(\beta\)</span> coefficient on the market risk premium is very close to what it was in the model that included an intercept.  It’s best to always include an intercept in your regressions.  Worst case scenario, the model estimates that intercept to be approximately zero, which tells us that the intercept really isn’t needed.  However, in many cases, the intercept is estimated to be non-zero.  The fact that CAPM does not include an intercept is due to the theoretical derivation of that model.  However, because this model is based on a <em>theory</em>, it may be wrong.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ch5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="5_stock_prices.html" title="previous page">Stock Prices</a>
+    <a class='right-next' id="next-link" href="7_capm.html" title="next page">Applied CAPM</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By James Nordlund, Ph.D.<br/>
+        
+          <div class="extra_footer">
+            <p>
+  Copyright 2021.  License: CC BY-NC-ND 4.0
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

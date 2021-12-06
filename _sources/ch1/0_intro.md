@@ -7,5 +7,3 @@ At the end of this chapter, you'll be able to:
 2. Add comments to code to label what specific commands do
 3. Create a basic function that returns a value to the user
 4. Write functions that anticipate and address erroneous user inputs
-
-<img src="../assets/dog-1885203_1920.jpg" alt="bulldog" style="transform: scaleX(-1);"> 

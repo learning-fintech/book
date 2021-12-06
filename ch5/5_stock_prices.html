@@ -1,0 +1,1549 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Prices &#8212; Financial Modeling and Analytics Using Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CAPM \(\beta\)" href="6_capm.html" />
+    <link rel="prev" title="The pandas_datareader Module" href="4_PandasDataReader.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Financial Modeling and Analytics Using Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Financial Modeling and Analytics
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python Preliminaries - Principles and Preferred Practices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/1_variablesAndData.html">
+   Variables and Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/2_math.html">
+   Math with Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/3_strings.html">
+   Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/3b_strings.html">
+   More Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4_functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4b_functions.html">
+   More Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1/4c_functions.html">
+   Combine Multiple Functions for Maximal Efficiency
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Learning to Love the Logic of Loops and Lists
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/1_loops.html">
+   Loops and Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/2_lists.html">
+   Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/3_list_comprehension.html">
+   List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/4_lifetime_savings.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   Loops and Delayed Savings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2/5_robo_advising.html">
+   Robo-Advising
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Dictionaries, DataFrames, Descriptives, and Diagnostics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/1_dictionaries.html">
+   Dictionaries and DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/2_robo_dictionary.html">
+   Dictionaries and the Robo-Advisor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/3_dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/4_slicing_dataframes.html">
+   Selecting Pieces of DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/5_dates_and_dataframes.html">
+   Dates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/6_descriptives.html">
+   Descriptive Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/7_simulation.html">
+   Simulating Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3/8_robo_sim.html">
+   Simulating Returns for the Robo-Advisor
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Can We Craft Causal Conclusions?
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/1_regression_data.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/2_causal_diagrams.html">
+   Causal Graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/3_regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4/4_regression_details.html">
+   Regression Details
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Running Regressions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_WhatIsAnAPI.html">
+   Application Programming Interface (API)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_ACS_Data.html">
+   American Community Survey
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_Regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4_PandasDataReader.html">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas_datareader
+    </span>
+   </code>
+   Module
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Stock Prices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6_capm.html">
+   CAPM
+   <span class="math notranslate nohighlight">
+    \(\beta\)
+   </span>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7_capm.html">
+   Applied CAPM
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ch5/5_stock_prices.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/learning-fintech/book/gh-pages?urlpath=tree/ch5/5_stock_prices.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="stock-prices">
+<h1>Stock Prices<a class="headerlink" href="#stock-prices" title="Permalink to this headline">¶</a></h1>
+<p>We’ll begin by loading the <code class="docutils literal notranslate"><span class="pre">pandas_datareader</span></code> module for access to convenient APIs, and the <code class="docutils literal notranslate"><span class="pre">datetime</span></code> module to specify start and end dates of data that we want to pull.</p>
+<p>There are multiple options in the <code class="docutils literal notranslate"><span class="pre">pandas_datareader</span></code> module for collecting stock price data.  Some reliable data providers are:</p>
+<ol class="simple">
+<li><p>Tiingo</p></li>
+<li><p>IEX</p></li>
+<li><p>AlphaVantage</p></li>
+</ol>
+<p>These three sources require API keys to access their data.  An alternative option is to use Yahoo Finance, which also has an API via <code class="docutils literal notranslate"><span class="pre">pandas_datareader</span></code>.  You can use Yahoo without an API key because <code class="docutils literal notranslate"><span class="pre">pandas_datareader</span></code> will pull data from Yahoo not via a computer-friendly API system but rather by scraping information off of the Yahoo site.  If the page gets re-designed, this method will fail until the <code class="docutils literal notranslate"><span class="pre">pandas_datareader</span></code> module updates to address the change.  Yahoo data has some reliability issues (the prices are inaccurate), and it is not recommended to use Yahoo data for any kind of important analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas_datareader.data</span> <span class="k">as</span> <span class="nn">web</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">3972</span><span class="n">f8269bfb</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas_datareader.data</span> <span class="k">as</span> <span class="nn">web</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas_datareader&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The API that we will make use of today is from <a class="reference external" href="https://www.alphavantage.co/support/#api-key">Alpha Vantage</a>.  Click the link to their website to request a free key.  Limits on free API users at the time of writing this notebook include:</p>
+<ul class="simple">
+<li><p>no more than 5 API requests per minute</p></li>
+<li><p>no more than 500 API requests per day</p></li>
+</ul>
+<p>Premium memberships allow for more access to the data.  For our purposes, the free key is sufficient.</p>
+<p>Run the following code cell to <code class="docutils literal notranslate"><span class="pre">pickle</span></code> your key, filling in the value for <code class="docutils literal notranslate"><span class="pre">api_key</span></code> as appropriate, using the key that you receive from the Alpha Vantage website.  If you want, you may delete this cell from your notebook after successfully pickling your key.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+<span class="n">api_key</span> <span class="o">=</span> <span class="s1">&#39;YOUR KEY HERE&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../pickle_jar/av_key.p&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With your key pickled, you can now load it as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../pickle_jar/av_key.p&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">api_key</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">api_key</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VAS
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s start by investigating VISA’s stock price in 2015.  Begin by specifying start and end dates as <code class="docutils literal notranslate"><span class="pre">datetime</span></code> dates, as we did in the previous chapter.  To access daily data from Alpha Vantage, we use <code class="docutils literal notranslate"><span class="pre">av-daily-adjusted</span></code> as our source.  Unlike in the previous chapter, we now need to use an <code class="docutils literal notranslate"><span class="pre">api_key</span></code> argument in the <code class="docutils literal notranslate"><span class="pre">DataReader()</span></code> function.  Using this key allows for Alpha Vantage to impose rate limits on free accounts.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+
+<span class="n">visa</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span><span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;av-daily-adjusted&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To see a snapshot of this data, let’s print the head.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">visa</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>open</th>
+      <th>high</th>
+      <th>low</th>
+      <th>close</th>
+      <th>adjusted close</th>
+      <th>volume</th>
+      <th>dividend amount</th>
+      <th>split coefficient</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015-01-02</th>
+      <td>263.38</td>
+      <td>266.7500</td>
+      <td>262.4900</td>
+      <td>265.02</td>
+      <td>63.342410</td>
+      <td>2098520</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2015-01-05</th>
+      <td>263.49</td>
+      <td>263.4999</td>
+      <td>258.8652</td>
+      <td>259.17</td>
+      <td>61.944202</td>
+      <td>3187800</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2015-01-06</th>
+      <td>259.79</td>
+      <td>260.7800</td>
+      <td>254.8550</td>
+      <td>257.50</td>
+      <td>61.545055</td>
+      <td>2767523</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2015-01-07</th>
+      <td>258.44</td>
+      <td>261.1400</td>
+      <td>257.4500</td>
+      <td>260.95</td>
+      <td>62.369639</td>
+      <td>2336705</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2015-01-08</th>
+      <td>263.20</td>
+      <td>265.1200</td>
+      <td>262.6300</td>
+      <td>264.45</td>
+      <td>63.206174</td>
+      <td>2610864</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The term’s <code class="docutils literal notranslate"><span class="pre">'close'</span></code> and <code class="docutils literal notranslate"><span class="pre">'adjusted</span> <span class="pre">close'</span></code> may or may not be new to you.  To see the utility of the <code class="docutils literal notranslate"><span class="pre">'adjusted</span> <span class="pre">close'</span></code> data, we’ll begin by plotting the closing stock price for VISA, as reported in the <code class="docutils literal notranslate"><span class="pre">'close'</span></code> column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">visa</span><span class="p">[</span><span class="s1">&#39;close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/5_stock_prices_11_1.png" src="../_images/5_stock_prices_11_1.png" />
+</div>
+</div>
+<p>Yikes!  There’s quite a crash in March of 2015.  The crash in the closing stock price for VISA corresponds to a stock split.  If you don’t adjust your data for stock splits, stock returns based on these underlying prices will have ridiculous outliers in the data series.  This is important because this erroneous data will adversely affect the quality of your statistical analysis.  For this reason, stock price analysis relies on <em>split-adjusted</em> data.  The Alpha Vantage adjusted closing price is a price series that takes in to account splits (following the standard CRSP methodology).  The adjusted close price does not demonstrate a similar crash.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">visa</span><span class="p">[</span><span class="s1">&#39;adjusted close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/5_stock_prices_13_1.png" src="../_images/5_stock_prices_13_1.png" />
+</div>
+</div>
+<p>Let’s now pull data for four different companies, using a longer series of data.  Our interest here will be in the FANG stocks: Facebook, Amazon, Netflix, Google.  Each data series will be a new API call to Alpha Vantage.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+
+<span class="n">fb</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span><span class="s1">&#39;FB&#39;</span><span class="p">,</span> <span class="s1">&#39;av-daily-adjusted&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">)</span>
+<span class="n">amzn</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span><span class="s1">&#39;AMZN&#39;</span><span class="p">,</span> <span class="s1">&#39;av-daily-adjusted&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">)</span>
+<span class="n">nflx</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span><span class="s1">&#39;NFLX&#39;</span><span class="p">,</span> <span class="s1">&#39;av-daily-adjusted&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">)</span>
+<span class="n">goog</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span><span class="s1">&#39;GOOG&#39;</span><span class="p">,</span> <span class="s1">&#39;av-daily-adjusted&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The four DataFrames that we create above can be used just like in the case of VISA.  For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fb</span><span class="p">[</span><span class="s1">&#39;adjusted close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/5_stock_prices_17_1.png" src="../_images/5_stock_prices_17_1.png" />
+</div>
+</div>
+<p>One trick with comparing prices across companies is that we need to <em>normalize</em> the price.  The price of a share of stock in a company will depend on the value of the company and the number of shares being traded.  Thus, it’s not an apples to apples comparison to look at stock price movements for two different companies with vastly different stock prices.  In fact, it’s sometimes difficult to even visualize two different price series if the two price series are of vastly different magnitudes.  For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fb</span><span class="p">[</span><span class="s1">&#39;adjusted close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">amzn</span><span class="p">[</span><span class="s1">&#39;adjusted close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/5_stock_prices_19_1.png" src="../_images/5_stock_prices_19_1.png" />
+</div>
+</div>
+<p>The relative magnitude of FB versus AMZN makes it hard to visualize price movements for AMZN when FB is plotted in the same figure.</p>
+<p>Thus, we divide prices by the starting price (the price at the start of our data series).  This will scale the prices for all companies in the data so that their movements are more comparable.</p>
+<p>Because <code class="docutils literal notranslate"><span class="pre">fb['adjusted</span> <span class="pre">close']</span></code> corresponds to one series (one column) of data, we can use <code class="docutils literal notranslate"><span class="pre">fb['adjusted</span> <span class="pre">close'].iloc[0]</span></code> to get the first element of that series.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fb</span><span class="p">[</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fb</span><span class="p">[</span><span class="s1">&#39;adjusted close&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">fb</span><span class="p">[</span><span class="s1">&#39;adjusted close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">fb</span><span class="p">[</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/5_stock_prices_21_1.png" src="../_images/5_stock_prices_21_1.png" />
+</div>
+</div>
+<p>Compared to our earlier plot of FB’s stock movement, the information is the same.  That is, the ups and downs look identical.  Note, however, that the scale on the y axis has changed.  This makes comparison more straight forward.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">amzn</span><span class="p">[</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">amzn</span><span class="p">[</span><span class="s1">&#39;adjusted close&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">amzn</span><span class="p">[</span><span class="s1">&#39;adjusted close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">fb</span><span class="p">[</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">amzn</span><span class="p">[</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/5_stock_prices_23_1.png" src="../_images/5_stock_prices_23_1.png" />
+</div>
+</div>
+<p>Every stock here has its own DataFrame.  That can become a lot of information to keep track of.  One common trick to deal with all of these DataFrames is to pack them in to a dictionary.  Here, the <em>key</em> of the dictionary is the stock name (the ticker symbol).  The <em>value</em> of the dictionary is the corresponding DataFrame of data for the relevant ticker.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fang</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;FB&#39;</span><span class="p">:</span><span class="n">fb</span><span class="p">,</span> <span class="s1">&#39;AMZN&#39;</span><span class="p">:</span><span class="n">amzn</span><span class="p">,</span> <span class="s1">&#39;NFLX&#39;</span><span class="p">:</span><span class="n">nflx</span><span class="p">,</span> <span class="s1">&#39;GOOG&#39;</span><span class="p">:</span><span class="n">goog</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can thus reference a DataFrame implicitly.  Rather than referring to it’s name directly (e.g. <code class="docutils literal notranslate"><span class="pre">fb</span></code>), we can get it indirectly via the dictionary (e.g. <code class="docutils literal notranslate"><span class="pre">fang['fb']</span></code>).  Thus, we can re-create the above plot with:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fang</span><span class="p">[</span><span class="s1">&#39;FB&#39;</span><span class="p">][</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">fang</span><span class="p">[</span><span class="s1">&#39;AMZN&#39;</span><span class="p">][</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/5_stock_prices_27_1.png" src="../_images/5_stock_prices_27_1.png" />
+</div>
+</div>
+<p>At first glance, this may seem more cumbersome than the original method.  Note, however, that packing DataFrames in to dictionaries is a <em>huge</em> time saver.  This is because it allows us to more quickly modify values for all DataFrames.  Note that we can get the keys of a dictionary via <code class="docutils literal notranslate"><span class="pre">.keys()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fang</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;FB&#39;, &#39;AMZN&#39;, &#39;NFLX&#39;, &#39;GOOG&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is convenient because we can then loop over a list of keys.  By doing so, we can modify <em>every</em> DataFrame in our dictionary with a simple <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.  Implicitly referencing DataFrames based on a dictionary key-value relationship can be much more efficient than explicitly referencing each DataFrame by name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">tic</span> <span class="ow">in</span> <span class="n">fang</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">fang</span><span class="p">[</span><span class="n">tic</span><span class="p">][</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fang</span><span class="p">[</span><span class="n">tic</span><span class="p">][</span><span class="s1">&#39;adjusted close&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">fang</span><span class="p">[</span><span class="n">tic</span><span class="p">][</span><span class="s1">&#39;adjusted close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Having normalized prices for all DataFrames, we can now plot the four FANG stocks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">tic</span> <span class="ow">in</span> <span class="n">fang</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">fang</span><span class="p">[</span><span class="n">tic</span><span class="p">][</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/5_stock_prices_33_0.png" src="../_images/5_stock_prices_33_0.png" />
+</div>
+</div>
+<p>It’s not immediately clear from the figure who the standout stock is.  That is, the stock that grew much more than the others over this sample period.  The easiest way is to simply print out the ending value for each series.  Note that just as we can type <code class="docutils literal notranslate"><span class="pre">.iloc[0]</span></code> to get the first element of a series, we can type <code class="docutils literal notranslate"><span class="pre">.iloc[-1]</span></code> to get the <em>last</em> element of the series (and, similarly, the second to last element is <code class="docutils literal notranslate"><span class="pre">.iloc[-2]</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">tic</span> <span class="ow">in</span> <span class="n">fang</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tic</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fang</span><span class="p">[</span><span class="n">tic</span><span class="p">][</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FB
+2.6163161249203313
+AMZN
+5.989368598470115
+NFLX
+6.4910651257874274
+GOOG
+2.5476267601608202
+</pre></div>
+</div>
+</div>
+</div>
+<p>The standout stock is thus NFLX.</p>
+<p>Now, suppose we want to combine all these return series in to one DataFrame.  That will simplify some later analysis for us.  Besides, once we get returns, we generally don’t do much with the other columns of data (e.g. opening price or volume).</p>
+<p>As a preliminary step towards combining data together, we need to name the returns for each DataFrame something distinct.  Recall that we can combine strings together with ‘<code class="docutils literal notranslate"><span class="pre">+</span></code>’, as in <code class="docutils literal notranslate"><span class="pre">'cat'+'dog'</span></code> equals <code class="docutils literal notranslate"><span class="pre">'catdog'</span></code> (note the lack of space).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">tic</span> <span class="ow">in</span> <span class="n">fang</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tic</span> <span class="o">+</span> <span class="s1">&#39; ret&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FB ret
+AMZN ret
+NFLX ret
+GOOG ret
+</pre></div>
+</div>
+</div>
+</div>
+<p>Rather than name the return series <code class="docutils literal notranslate"><span class="pre">'ret'</span></code> for each DataFrame, we’ll name it <code class="docutils literal notranslate"><span class="pre">tic+'</span> <span class="pre">ret'</span></code>, where <code class="docutils literal notranslate"><span class="pre">tic</span></code> holds the dictionary key that we’re working with.  Hence, the return series for FB would be named <code class="docutils literal notranslate"><span class="pre">'FB</span> <span class="pre">ret'</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">tic</span> <span class="ow">in</span> <span class="n">fang</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">fang</span><span class="p">[</span><span class="n">tic</span><span class="p">][</span><span class="n">tic</span> <span class="o">+</span> <span class="s1">&#39; ret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fang</span><span class="p">[</span><span class="n">tic</span><span class="p">][</span><span class="s1">&#39;adjusted close&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">fang</span><span class="p">[</span><span class="n">tic</span><span class="p">][</span><span class="s1">&#39;adjusted close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fang</span><span class="p">[</span><span class="s1">&#39;FB&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>open</th>
+      <th>high</th>
+      <th>low</th>
+      <th>close</th>
+      <th>adjusted close</th>
+      <th>volume</th>
+      <th>dividend amount</th>
+      <th>split coefficient</th>
+      <th>ret</th>
+      <th>FB ret</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015-01-02</th>
+      <td>78.58</td>
+      <td>78.9300</td>
+      <td>77.700</td>
+      <td>78.450</td>
+      <td>78.450</td>
+      <td>18177475</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>2015-01-05</th>
+      <td>77.98</td>
+      <td>79.2455</td>
+      <td>76.860</td>
+      <td>77.190</td>
+      <td>77.190</td>
+      <td>26452191</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.983939</td>
+      <td>0.983939</td>
+    </tr>
+    <tr>
+      <th>2015-01-06</th>
+      <td>77.23</td>
+      <td>77.5900</td>
+      <td>75.365</td>
+      <td>76.150</td>
+      <td>76.150</td>
+      <td>27399288</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.970682</td>
+      <td>0.970682</td>
+    </tr>
+    <tr>
+      <th>2015-01-07</th>
+      <td>76.76</td>
+      <td>77.3600</td>
+      <td>75.820</td>
+      <td>76.150</td>
+      <td>76.150</td>
+      <td>22045333</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.970682</td>
+      <td>0.970682</td>
+    </tr>
+    <tr>
+      <th>2015-01-08</th>
+      <td>76.74</td>
+      <td>78.2300</td>
+      <td>76.080</td>
+      <td>78.175</td>
+      <td>78.175</td>
+      <td>23960953</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.996495</td>
+      <td>0.996495</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>With that done, we can now subset our data to only include this named return series (e.g. <code class="docutils literal notranslate"><span class="pre">'FB</span> <span class="pre">ret'</span></code>, <code class="docutils literal notranslate"><span class="pre">'AAPL</span> <span class="pre">ret'</span></code>, etc.).  All other columns will be removed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">tic</span> <span class="ow">in</span> <span class="n">fang</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">fang</span><span class="p">[</span><span class="n">tic</span><span class="p">]</span> <span class="o">=</span> <span class="n">fang</span><span class="p">[</span><span class="n">tic</span><span class="p">][[</span><span class="n">tic</span> <span class="o">+</span> <span class="s1">&#39; ret&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fang</span><span class="p">[</span><span class="s1">&#39;FB&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>FB ret</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015-01-02</th>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>2015-01-05</th>
+      <td>0.983939</td>
+    </tr>
+    <tr>
+      <th>2015-01-06</th>
+      <td>0.970682</td>
+    </tr>
+    <tr>
+      <th>2015-01-07</th>
+      <td>0.970682</td>
+    </tr>
+    <tr>
+      <th>2015-01-08</th>
+      <td>0.996495</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Here, we have four DataFrames that we want to combine.  The <code class="docutils literal notranslate"><span class="pre">.merge()</span></code> function used previously can link together two DataFrames, but not more than two.  To handle a merger between four DataFrames, we need to use <code class="docutils literal notranslate"><span class="pre">.join()</span></code>.  The syntax for merging two DataFrames with <code class="docutils literal notranslate"><span class="pre">.merge()</span></code> is <code class="docutils literal notranslate"><span class="pre">df1.merge(df2)</span></code>, where <code class="docutils literal notranslate"><span class="pre">df1</span></code> and <code class="docutils literal notranslate"><span class="pre">df2</span></code> are DataFrames.  We can likewise do <code class="docutils literal notranslate"><span class="pre">df1.join(df2)</span></code> to merge via <code class="docutils literal notranslate"><span class="pre">.join()</span></code>.  More useful, however, is the fact that we can do <code class="docutils literal notranslate"><span class="pre">df1.join([df2,df3,df4])</span></code> to combine four DataFrames all at once.  Thus, we need two items.  First, we need a <code class="docutils literal notranslate"><span class="pre">df1</span></code>; we’ll use FB for this.  Second, we need a list <code class="docutils literal notranslate"><span class="pre">[df2,</span> <span class="pre">df3,</span> <span class="pre">df4]</span></code>.  We’ll use AAPL, NFLX, and GOOGL here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F_value</span> <span class="o">=</span> <span class="n">fang</span><span class="p">[</span><span class="s1">&#39;FB&#39;</span><span class="p">]</span>
+<span class="n">ANG_value</span> <span class="o">=</span> <span class="p">[</span><span class="n">fang</span><span class="p">[</span><span class="n">tic</span><span class="p">]</span> <span class="k">for</span> <span class="n">tic</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;AMZN&#39;</span><span class="p">,</span> <span class="s1">&#39;NFLX&#39;</span><span class="p">,</span> <span class="s1">&#39;GOOG&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F_value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>FB ret</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015-01-02</th>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>2015-01-05</th>
+      <td>0.983939</td>
+    </tr>
+    <tr>
+      <th>2015-01-06</th>
+      <td>0.970682</td>
+    </tr>
+    <tr>
+      <th>2015-01-07</th>
+      <td>0.970682</td>
+    </tr>
+    <tr>
+      <th>2015-01-08</th>
+      <td>0.996495</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2019-12-24</th>
+      <td>2.614659</td>
+    </tr>
+    <tr>
+      <th>2019-12-26</th>
+      <td>2.648693</td>
+    </tr>
+    <tr>
+      <th>2019-12-27</th>
+      <td>2.652645</td>
+    </tr>
+    <tr>
+      <th>2019-12-30</th>
+      <td>2.605609</td>
+    </tr>
+    <tr>
+      <th>2019-12-31</th>
+      <td>2.616316</td>
+    </tr>
+  </tbody>
+</table>
+<p>1258 rows × 1 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ANG_value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[            AMZN ret
+ 2015-01-02  1.000000
+ 2015-01-05  0.979483
+ 2015-01-06  0.957118
+ 2015-01-07  0.967263
+ 2015-01-08  0.973875
+ ...              ...
+ 2019-12-24  5.799332
+ 2019-12-26  6.057209
+ 2019-12-27  6.060547
+ 2019-12-30  5.986289
+ 2019-12-31  5.989369
+ 
+ [1258 rows x 1 columns],
+             NFLX ret
+ 2015-01-02  1.000000
+ 2015-01-05  0.949103
+ 2015-01-06  0.932854
+ 2015-01-07  0.937697
+ 2015-01-08  0.958489
+ ...              ...
+ 2019-12-24  6.684250
+ 2019-12-26  6.672816
+ 2019-12-27  6.601801
+ 2019-12-30  6.485849
+ 2019-12-31  6.491065
+ 
+ [1258 rows x 1 columns],
+             GOOG ret
+ 2015-01-02  1.000000
+ 2015-01-05  0.979154
+ 2015-01-06  0.956460
+ 2015-01-07  0.954822
+ 2015-01-08  0.957832
+ ...              ...
+ 2019-12-24  2.560088
+ 2019-12-26  2.592176
+ 2019-12-27  2.575961
+ 2019-12-30  2.545950
+ 2019-12-31  2.547627
+ 
+ [1258 rows x 1 columns]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Thus, we can now create a DataFrame that joins together all four single-stock DataFrames.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">F_value</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ANG_value</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>FB ret</th>
+      <th>AMZN ret</th>
+      <th>NFLX ret</th>
+      <th>GOOG ret</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015-01-02</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>2015-01-05</th>
+      <td>0.983939</td>
+      <td>0.979483</td>
+      <td>0.949103</td>
+      <td>0.979154</td>
+    </tr>
+    <tr>
+      <th>2015-01-06</th>
+      <td>0.970682</td>
+      <td>0.957118</td>
+      <td>0.932854</td>
+      <td>0.956460</td>
+    </tr>
+    <tr>
+      <th>2015-01-07</th>
+      <td>0.970682</td>
+      <td>0.967263</td>
+      <td>0.937697</td>
+      <td>0.954822</td>
+    </tr>
+    <tr>
+      <th>2015-01-08</th>
+      <td>0.996495</td>
+      <td>0.973875</td>
+      <td>0.958489</td>
+      <td>0.957832</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Having all data in one DataFrame is powerful.  For instance, suppose that we want to create an equal-weighted portfolio of these four stocks.  An equal-weighted portfolio is achieved by allocating 1/4 weight to each stock, which is equivalent to adding up the returns for all four stocks and then dividing by four.  We can add across rows via <code class="docutils literal notranslate"><span class="pre">.sum(axis=1)</span></code>, where the <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> argument tells <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to sum by rows (rather than summing by column, which happens via <code class="docutils literal notranslate"><span class="pre">axis=0</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;FB ret&#39;</span><span class="p">,</span> <span class="s1">&#39;AMZN ret&#39;</span><span class="p">,</span> <span class="s1">&#39;NFLX ret&#39;</span><span class="p">,</span> <span class="s1">&#39;GOOG ret&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>FB ret</th>
+      <th>AMZN ret</th>
+      <th>NFLX ret</th>
+      <th>GOOG ret</th>
+      <th>ret</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015-01-02</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>2015-01-05</th>
+      <td>0.983939</td>
+      <td>0.979483</td>
+      <td>0.949103</td>
+      <td>0.979154</td>
+      <td>0.972920</td>
+    </tr>
+    <tr>
+      <th>2015-01-06</th>
+      <td>0.970682</td>
+      <td>0.957118</td>
+      <td>0.932854</td>
+      <td>0.956460</td>
+      <td>0.954279</td>
+    </tr>
+    <tr>
+      <th>2015-01-07</th>
+      <td>0.970682</td>
+      <td>0.967263</td>
+      <td>0.937697</td>
+      <td>0.954822</td>
+      <td>0.957616</td>
+    </tr>
+    <tr>
+      <th>2015-01-08</th>
+      <td>0.996495</td>
+      <td>0.973875</td>
+      <td>0.958489</td>
+      <td>0.957832</td>
+      <td>0.971673</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Plotting is also more convenient when the data come from a single DataFrame.  Each series name is added to the plot legend so that it’s easy to determine which stock is which.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/5_stock_prices_53_1.png" src="../_images/5_stock_prices_53_1.png" />
+</div>
+</div>
+<p>This portfolio perhaps doesn’t give fantastic diversification benefits.  The four FANG stocks have similar ups and downs, and consequently our equal-weighted portfolio also follows those ups and downs.</p>
+<p>One way to think about diversification is through return correlation.  Use the <code class="docutils literal notranslate"><span class="pre">.pct_change()</span></code> function to quickly get stock returns (percent changes in price).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pct_chng</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
+<span class="n">pct_chng</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>FB ret</th>
+      <th>AMZN ret</th>
+      <th>NFLX ret</th>
+      <th>GOOG ret</th>
+      <th>ret</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015-01-02</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2015-01-05</th>
+      <td>-0.016061</td>
+      <td>-0.020517</td>
+      <td>-0.050897</td>
+      <td>-0.020846</td>
+      <td>-0.027080</td>
+    </tr>
+    <tr>
+      <th>2015-01-06</th>
+      <td>-0.013473</td>
+      <td>-0.022833</td>
+      <td>-0.017121</td>
+      <td>-0.023177</td>
+      <td>-0.019160</td>
+    </tr>
+    <tr>
+      <th>2015-01-07</th>
+      <td>0.000000</td>
+      <td>0.010600</td>
+      <td>0.005192</td>
+      <td>-0.001713</td>
+      <td>0.003497</td>
+    </tr>
+    <tr>
+      <th>2015-01-08</th>
+      <td>0.026592</td>
+      <td>0.006836</td>
+      <td>0.022173</td>
+      <td>0.003153</td>
+      <td>0.014679</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">.std()</span></code> function will then yield a volatility estimate for each stock.  Note that this is a daily volatility since we are using daily stock returns.  We can convert this to an annual volatility by multiplying by <span class="math notranslate nohighlight">\(\sqrt{252}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">vol</span> <span class="o">=</span> <span class="n">pct_chng</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">252</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FB ret      0.282214
+AMZN ret    0.292495
+NFLX ret    0.416745
+GOOG ret    0.240093
+ret         0.261443
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we observe that, while NFLX definitely grew the most over the period, it had the highest volatility.</p>
+<p>The correlation matrix via <code class="docutils literal notranslate"><span class="pre">.corr()</span></code> will print out a correlation in returns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pct_chng</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>FB ret</th>
+      <th>AMZN ret</th>
+      <th>NFLX ret</th>
+      <th>GOOG ret</th>
+      <th>ret</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>FB ret</th>
+      <td>1.000000</td>
+      <td>0.569323</td>
+      <td>0.405252</td>
+      <td>0.599273</td>
+      <td>0.698254</td>
+    </tr>
+    <tr>
+      <th>AMZN ret</th>
+      <td>0.569323</td>
+      <td>1.000000</td>
+      <td>0.482377</td>
+      <td>0.641027</td>
+      <td>0.817429</td>
+    </tr>
+    <tr>
+      <th>NFLX ret</th>
+      <td>0.405252</td>
+      <td>0.482377</td>
+      <td>1.000000</td>
+      <td>0.466525</td>
+      <td>0.854580</td>
+    </tr>
+    <tr>
+      <th>GOOG ret</th>
+      <td>0.599273</td>
+      <td>0.641027</td>
+      <td>0.466525</td>
+      <td>1.000000</td>
+      <td>0.745282</td>
+    </tr>
+    <tr>
+      <th>ret</th>
+      <td>0.698254</td>
+      <td>0.817429</td>
+      <td>0.854580</td>
+      <td>0.745282</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>As usual, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> will make things a little more aesthetically pleasing.  Correlation matrices can be difficult to digest, because it’s just a big matrix of numbers.  The <code class="docutils literal notranslate"><span class="pre">.heatmap()</span></code> from <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> will colorize the correlation matrix to make it easier to explore.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">pct_chng</span><span class="o">.</span><span class="n">corr</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/5_stock_prices_61_1.png" src="../_images/5_stock_prices_61_1.png" />
+</div>
+</div>
+<p>Let’s finish with another example.  Consider three cellular providers.  The <code class="docutils literal notranslate"><span class="pre">pandas_datareader</span></code> module makes it phenomenally easy to construct a portfolio of these companies.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#ticker_list = [&#39;VZ&#39;, &#39;T&#39;, &#39;TMUS&#39;]</span>
+<span class="n">ticker_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AMD&#39;</span><span class="p">,</span> <span class="s1">&#39;NVDA&#39;</span><span class="p">,</span> <span class="s1">&#39;INTC&#39;</span><span class="p">,</span> <span class="s1">&#39;AAPL&#39;</span><span class="p">]</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">tic</span> <span class="ow">in</span> <span class="n">ticker_list</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span><span class="n">tic</span><span class="p">,</span> <span class="s1">&#39;av-daily-adjusted&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">tic</span> <span class="o">+</span> <span class="s1">&#39; ret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;adjusted close&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;adjusted close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">tic</span> <span class="o">+</span> <span class="s1">&#39; ret&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">tic</span><span class="p">:</span> <span class="n">df</span><span class="p">})</span>
+
+<span class="n">df2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">ticker_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">join</span><span class="p">([</span> <span class="n">data</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">ticker_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="p">])</span>
+<span class="n">df2</span><span class="p">[</span><span class="s1">&#39;portfolio ret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[[</span><span class="n">tic</span> <span class="o">+</span> <span class="s1">&#39; ret&#39;</span> <span class="k">for</span> <span class="n">tic</span> <span class="ow">in</span> <span class="n">ticker_list</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ticker_list</span><span class="p">)</span>
+
+<span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/5_stock_prices_63_1.png" src="../_images/5_stock_prices_63_1.png" />
+</div>
+</div>
+<p>An interesting feature of the above cell block is that we only need to change the first line of code, and we can create an equal-weighted portfolio of stocks for any set of stocks that we want (note, however, that the free version of the Alpha Vantage API will limit you to loading five stocks per minute).</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ch5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="4_PandasDataReader.html" title="previous page">The <code class="docutils literal notranslate"><span class="pre">pandas_datareader</span></code> Module</a>
+    <a class='right-next' id="next-link" href="6_capm.html" title="next page">CAPM <span class="math notranslate nohighlight">\(\beta\)</span></a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By James Nordlund, Ph.D.<br/>
+        
+          <div class="extra_footer">
+            <p>
+  Copyright 2021.  License: CC BY-NC-ND 4.0
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -53,6 +53,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction" href="../ch5/0_intro.html" />
     <link rel="prev" title="Regression" href="3_regression.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -263,6 +264,62 @@
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Running Regressions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5/0_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5/1_WhatIsAnAPI.html">
+   Application Programming Interface (API)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5/2_ACS_Data.html">
+   American Community Survey
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5/3_Regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5/4_PandasDataReader.html">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas_datareader
+    </span>
+   </code>
+   Module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5/5_stock_prices.html">
+   Stock Prices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5/6_capm.html">
+   CAPM
+   <span class="math notranslate nohighlight">
+    \(\beta\)
+   </span>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5/7_capm.html">
+   Applied CAPM
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -314,22 +371,6 @@
 
             <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/learning-fintech/book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/learning-fintech/book/issues/new?title=Issue%20on%20page%20%2Fch4/4_regression_details.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -344,7 +385,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/learning-fintech/book/master?urlpath=tree/ch4/4_regression_details.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/learning-fintech/book/gh-pages?urlpath=tree/ch4/4_regression_details.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -583,8 +624,8 @@ y = \beta_0 + \beta_1 x + u
 Dep. Variable:                 salary   R-squared:                       0.013
 Model:                            OLS   Adj. R-squared:                  0.008
 Method:                 Least Squares   F-statistic:                     2.767
-Date:                Mon, 27 Sep 2021   Prob (F-statistic):             0.0978
-Time:                        19:27:25   Log-Likelihood:                -1804.5
+Date:                Mon, 06 Dec 2021   Prob (F-statistic):             0.0978
+Time:                        12:05:57   Log-Likelihood:                -1804.5
 No. Observations:                 209   AIC:                             3613.
 Df Residuals:                     207   BIC:                             3620.
 Df Model:                           1                                         
@@ -923,8 +964,8 @@ var(\hat{\beta}_1) = \frac{var(u)}{\sum_{i=1}^n(x_i - \bar{x})^2}
 Dep. Variable:                 salary   R-squared:                       0.013
 Model:                            OLS   Adj. R-squared:                  0.008
 Method:                 Least Squares   F-statistic:                     7.191
-Date:                Mon, 27 Sep 2021   Prob (F-statistic):            0.00792
-Time:                        19:27:25   Log-Likelihood:                -1804.5
+Date:                Mon, 06 Dec 2021   Prob (F-statistic):            0.00792
+Time:                        12:05:57   Log-Likelihood:                -1804.5
 No. Observations:                 209   AIC:                             3613.
 Df Residuals:                     207   BIC:                             3620.
 Df Model:                           1                                         
@@ -976,6 +1017,7 @@ Notes:
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="3_regression.html" title="previous page">Regression</a>
+    <a class='right-next' id="next-link" href="../ch5/0_intro.html" title="next page">Introduction</a>
 
         </div>
         

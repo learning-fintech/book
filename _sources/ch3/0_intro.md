@@ -6,5 +6,3 @@ At the end of this chapter, you'll be able to:
 1. Create dictionary and DataFrame variables to store complex data
 2. Simulate financial data using a pseudo-random number generator
 3. Report descriptive statistics about financial data
-
-<img src="../assets/pexels-sam-lion-5732454.jpg" alt="doctor_doggie"> 
